@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -7,12 +8,21 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontFamily: {
+        caveats: ['Caveat', 'cursive'],
+      },
+      colors: {
+        customDark: "#050505",
+        customGreen: "#088606",
+        customBrown: "#261707",
+        customOrange: {
+          100: "#937b23",
+          200: "#816c21",
+          300: "#71631b"
+        },
+        customWhite:"#feffff",
       },
     },
-  },
-  plugins: [],
-};
+    plugins: [],
+  }
+}
