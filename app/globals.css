@@ -1,4 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+    font-family: "Inter", "Dosis";
+}
+
+::-webkit-scrollbar { 
+    width: 8px; 
+    height: 8px;
+} 
+
+::-webkit-scrollbar-track { 
+    background:transparent; 
+    display: none;
+} 
+
+::-webkit-scrollbar-thumb { 
+    background:linear-gradient(45deg, #ff00c8 0%, rgba(253,29,29,1) 50%, #00c8ff 100%);
+    border-radius: 50px;
+ 
+} 
+
+::-webkit-scrollbar-thumb:hover { 
+    background: linear-gradient(45deg, rgba(144,34,195,1) 0%, rgba(113,163,107,1) 59%, rgba(91,253,45,1) 100%);
+} 
+
+::-webkit-scrollbar-button { 
+    display: none; 
+} 
+

@@ -6,21 +6,25 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
         caveats: ['Caveat', 'cursive'],
+        stencil: ["stencil", "static"],
+        Inter: ["Inter"],
+        Dosis: ["Dosis"]
       },
       colors: {
         customDark: "#050505",
-        customGreen: "#088606",
+        customGreen: "#088406",
         customBrown: "#261707",
         customOrange: {
           100: "#937b23",
           200: "#816c21",
           300: "#71631b"
         },
-        customWhite:"#feffff",
+        customWhite: "#feffff",
       },
     },
     plugins: [],

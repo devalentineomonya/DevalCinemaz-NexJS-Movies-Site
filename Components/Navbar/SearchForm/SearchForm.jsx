@@ -12,7 +12,7 @@ const SearchForm = ({ searching }) => {
     },[searching])
   return (
     <div
-      className={` h-10 bg-gray-800 flex justify-start items-center rounded-full ${
+      className={` h-10  dark:bg-zinc-900 bg-zinc-100 flex justify-start items-center rounded-full ${
         searching ? "w-full  pl-10 pr-5" : "w-[0%]"
       }`}
     >
@@ -25,9 +25,9 @@ const SearchForm = ({ searching }) => {
           placeholder="Type to search Movies or Series"
           className={`${
             searching ? "w-full" : "w-[0%]"
-          } outline-none border-none bg-transparent text-customWhite placeholder:text-gray-400 `}
+          } outline-none border-none bg-transparent dark:text-customWhite text-customDark placeholder:text-gray-400 `}
         />
-        {searching && <button className="text-xl text-customWhite" type="submit"><GoSearch/></button>}
+        {searching && <button className="text-xl dark:text-customWhite text-customDark" type="submit"><GoSearch/></button>}
       </form>
     </div>
   );

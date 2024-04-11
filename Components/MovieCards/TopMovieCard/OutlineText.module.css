@@ -1,0 +1,9 @@
+.strokeText{
+    font-size: 400px;
+    height:20rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    -webkit-text-fill-color:transparent;
+    -webkit-text-stroke-width:2px;
+}

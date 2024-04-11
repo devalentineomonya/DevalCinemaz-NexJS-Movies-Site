@@ -1,35 +1,40 @@
 // NavItem.js
 import React, { useRef } from "react";
 
-const NavItem = ({ searching, tab, setActiveTab, activeTab }) => {
-
+const NavItem = ({ searching, tab, isActive }) => {
   const subMenuRef = useRef(null);
 
+  // No need for `setActiveTab` here (passed from Navbar)
+
   const handleSubMenuToggle = () => {
-      setActiveTab(tab.id)
-      console.log(activeTab);
-    
+    if (!searching) {
+      // Only toggle if not searching
+      subMenuRef.current.classList.toggle("hidden"); // Toggle visibility directly
+    }
   };
 
   return (
-    <div className="relative mr-[20px] ">
+    <div className="relative ml-[20px] ">
       <div
-        className={`group w-[110px] cursor-pointer text-customWhite flex justify-between items-center mr-[10px] border-r-[1px] pr-[10px] group-last:border-r-0 ${
+        className={`group pr-[20px] mr-[10px]  cursor-pointer dark:text-customWhite text-customDark flex justify-between items-center border-r-[1px] border-slate-600 group-last:border-r-0 ${
           searching ? "hidden" : null
         }`}
-        onMouseEnter={handleSubMenuToggle}
+        onClick={handleSubMenuToggle}
       >
         {tab.name}
       </div>
       {tab.subMenu.length > 0 && (
         <div
-          ref={subMenuRef} 
-          className={`absolute top-[30px] w-[172px] bg-customWhite shadow-md rounded  py-2 hidden ${
-            activeTab === tab.id && !searching ? "" : "hidden" // Show only if active and not searching
+          ref={subMenuRef}
+          className={`absolute top-[30px] w-[172px] bg-customWhite dark:bg-customDark dark:text-customWhite text-customDark shadow-md rounded  pt-4 hidden ${
+            isActive && !searching ? "" : "hidden" // Show only if active and not searching
           } `}
         >
           {tab.subMenu.map((menu, i) => (
-            <div key={i} className="text-[14px] px-3 cursor-pointer hover:bg-gray-100 p-1 ">
+            <div
+              key={i}
+              className="text-[14px] px-3 cursor-pointer dark:hover:bg-gray-800 hover:bg-gray-100 p-1 rounded "
+            >
               {menu}
             </div>
           ))}
