@@ -41,7 +41,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="w-full h-16 dark:bg-customDark bg-yellow-200 fixed top-0 flex justify-center items-center z-50 ">
+    <div className="w-full h-16 bg-transparent backdrop-blur-3xl fixed top-0 flex justify-center items-center z-50 shadow-2xl ">
       <div className="w-full max-w-[1400px]  flex justify-between items-center">
         <div className="w-fit">
           <h1 className={styles.title}>
@@ -62,6 +62,7 @@ const Navbar = () => {
                   tab={tab}
                   isActive={activeTab === tab.id} // Pass `isActive` prop
                   onMouseEnter={() => handleHover(tab.id)}
+                  lastItem={tabs.length}
                 />
               </li>
             ))}
@@ -76,15 +77,15 @@ const Navbar = () => {
         </div>
         <div className="flex justify-between w-fit pr-5">
           <div
-            className="dark:text-customWhite text-customDark mr-5 cursor-pointer hover:text-customOrange-300 transition-all ease-in-out duration-300"
+            className="text-customWhite  mr-5 cursor-pointer hover:text-customOrange-300 transition-all ease-in-out duration-300"
             onClick={() => setSearching((prev) => !prev)}
           >
             <IoSearchOutline size={18} />
           </div>
-          <div className="dark:text-customWhite text-customDark mr-5 cursor-pointer hover:text-customOrange-300 transition-all ease-in-out duration-300">
+          <div className="text-customWhite mr-5 cursor-pointer hover:text-customOrange-300 transition-all ease-in-out duration-300">
             <RiUserAddLine size={18} />
           </div>
-          <div className="dark:text-customWhite text-customDark mr-5 cursor-pointer hover:text-customOrange-300 transition-all ease-in-out duration-300">
+          <div className="text-customWhite mr-5 cursor-pointer hover:text-customOrange-300 transition-all ease-in-out duration-300">
             <GoBell size={18} />
           </div>
           <ModeToggler />

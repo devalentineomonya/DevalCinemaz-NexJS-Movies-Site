@@ -4,9 +4,9 @@ import HeroTrendingButtons from "./HeroTrendingButtons/HeroTrendingButtons";
 import testImage from "@/assets/testImage.jpg";
 const HeroTrending = () => {
   return (
-    <div className="w-full h-[70vh]  relative top-[63px] cursor-default">
+    <div className="w-full h-[70vh]  relative  cursor-default">
       <div className="absolute w-full h-full">
-      <div className="bg-gradient-to-r from-customBrown via-customOrange-200 to-customOrange-300 dark:from-customDark dark:via-gray-800 dark:to-black h-full w-full absolute left-0 top-0 opacity-[0.7]"></div>
+      <div className="bg-gradient-to-r dark:from-customDark dark:via-gray-800 dark:to-black h-full w-full absolute left-0 top-0 opacity-[0.7]"></div>
  <Image
           src={testImage}
           w={100}

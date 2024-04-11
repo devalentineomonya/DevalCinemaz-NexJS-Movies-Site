@@ -29,7 +29,7 @@ const ModeToggler = () => {
       {darkMode ? (
         <IoSunny
           size={18}
-          className="dark:text-customWhite text-customDark  hover:text-customOrange-300 "
+          className="text-customWhite  hover:text-customOrange-300 "
           onClick={() => {
             setIsOpen((prev) => !prev);
           }}
@@ -37,7 +37,7 @@ const ModeToggler = () => {
       ) : (
         <GoMoon
           size={18}
-          className="dark:text-customWhite text-customDark  hover:text-customOrange-300 "
+          className="text-customWhite  hover:text-customOrange-300 "
           onClick={() => {
             setIsOpen((prev) => !prev);
           }}

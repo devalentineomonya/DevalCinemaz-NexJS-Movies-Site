@@ -1,7 +1,7 @@
 // NavItem.js
 import React, { useRef } from "react";
 
-const NavItem = ({ searching, tab, isActive }) => {
+const NavItem = ({ searching, tab, isActive, lastItem }) => {
   const subMenuRef = useRef(null);
 
   // No need for `setActiveTab` here (passed from Navbar)
@@ -14,9 +14,9 @@ const NavItem = ({ searching, tab, isActive }) => {
   };
 
   return (
-    <div className="relative ml-[20px] ">
+    <header className="relative ml-[20px] ">
       <div
-        className={`group pr-[20px] mr-[10px]  cursor-pointer dark:text-customWhite text-customDark flex justify-between items-center border-r-[1px] border-slate-600 group-last:border-r-0 ${
+        className={` pr-[20px] mr-[10px]  cursor-pointer text-customWhite flex justify-between items-center  border-slate-600 ${ tab.id===lastItem ? null : "border-r-[1px]"} ${
           searching ? "hidden" : null
         }`}
         onClick={handleSubMenuToggle}
@@ -40,7 +40,7 @@ const NavItem = ({ searching, tab, isActive }) => {
           ))}
         </div>
       )}
-    </div>
+    </header>
   );
 };
 
