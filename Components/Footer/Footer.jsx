@@ -24,7 +24,7 @@ const Footer = () => {
     },
   ];
   return (
-    <div className="h-[300px] w-full dark:bg-customDark bg-customWhite flex justify-center items-center ">
+    <div className="h-[300px] w-full dark:bg-customDark bg-customWhite flex justify-center items-center shadow-inner">
       <div className="max-w-[1400px]  px-10  w-full flex flex-row justify-center  items-center gap-x-14 pl-12">
         {navItems.map((navItem, i) => (
           <div className="flex flex-col w-[150px]" key={i}>

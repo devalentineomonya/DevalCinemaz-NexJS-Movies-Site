@@ -13,7 +13,8 @@ module.exports = {
         caveats: ['Caveat', 'cursive'],
         stencil: ["stencil", "static"],
         Inter: ["Inter"],
-        Dosis: ["Dosis"]
+        Dosis: ["Dosis"],
+        Arial: ["Arial"]
       },
       colors: {
         customDark: "#050505",
