@@ -1,9 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { BsStar, BsStarFill } from "react-icons/bs";
 import testImage from "@/assets/testImage.jpg";
-import ViewMovieButton from "../TrendingMovies/ViewMovieButton/ViewMovieButton";
-
 const MovieInCategory = () => {
   return (
     <div className=" h-[420px] w-72 rounded-md overflow-hidden dark:bg-gray-950 bg-slate-200 flex flex-col flex-shrink-0">
