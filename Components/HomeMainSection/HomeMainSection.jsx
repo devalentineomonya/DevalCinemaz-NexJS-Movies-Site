@@ -51,16 +51,16 @@ const HomeMainSection = () => {
           <TrendingMovies />
         </SmallSectionContainer>
         <SmallSectionContainer title="This is a dynamic title" viewMore={true}>
-          <NewRelease width="w-72"/>
-          <NewRelease width="w-72"/>
-          <NewRelease width="w-72"/>
-          <NewRelease width="w-72"/>
-          <NewRelease width="w-72"/>
-          <NewRelease width="w-72"/>
-          <NewRelease width="w-72"/>
-          <NewRelease width="w-72"/>
-          <NewRelease width="w-72"/>
-          <NewRelease width="w-72"/>
+          <NewRelease width="72"/>
+          <NewRelease width="72"/>
+          <NewRelease width="72"/>
+          <NewRelease width="72"/>
+          <NewRelease width="72"/>
+          <NewRelease width="72"/>
+          <NewRelease width="72"/>
+          <NewRelease width="72"/>
+          <NewRelease width="72"/>
+          <NewRelease width="72"/>
         </SmallSectionContainer>
         <SmallSectionContainer title="This is a dynamic title" viewMore={true}>
           <MovieInCategory />

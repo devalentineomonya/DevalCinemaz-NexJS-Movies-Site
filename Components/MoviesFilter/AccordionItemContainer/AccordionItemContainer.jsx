@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
 import { TECollapse } from "tw-elements-react";
-const AccordionItemContainer = ({ children, title, mt }) => {
+const AccordionItemContainer = ({ children, title, mt, px }) => {
   const [activeElement, setActiveElement] = useState("");
 
   const handleClick = (value) => {
@@ -13,7 +13,7 @@ const AccordionItemContainer = ({ children, title, mt }) => {
     }
   };
   return (
-    <div className={`rounded-md shadow-sm shadow-gray-400 dark:shadow-slate-800 dark:bg-[#1b1a1c] bg-customWhite transition-all ease-in-out duration-300 ${mt}`}>
+    <div className={`overflow-hidden rounded-md shadow-sm shadow-gray-400 dark:shadow-gray-400 dark:bg-[#1b1a1c] bg-customWhite transition-all ease-in-out duration-300 ${mt}`}>
       <h2
         className="mb-0 border-b-[1px] dark:border-gray-500 px-1 "
         id="headingOne"
@@ -37,7 +37,7 @@ const AccordionItemContainer = ({ children, title, mt }) => {
       </h2>
       <TECollapse
         show={activeElement === "element1"}
-        className="!mt-0 !rounded-b-none !shadow-none transition-all ease-in-out duration-300"
+        className={`!mt-0 !rounded-b-none !shadow-none transition-all ease-in-out duration-300 pb-2 px-${px}`}
       >
         {children}
       </TECollapse>

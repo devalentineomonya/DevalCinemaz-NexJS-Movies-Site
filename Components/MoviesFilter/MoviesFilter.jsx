@@ -176,6 +176,17 @@ const MoviesFilter = () => {
             <button className="px-4 py-1 border-2 rounded-full">Genre</button>
           </div>
         </AccordionItemContainer>
+        <AccordionItemContainer title="Keywords" mt={"mt-5"}>
+          <div className="flex flex-row flex-wrap gap-x-2 gap-y-3  py-3 px-2 dark:text-customWhite text-customDark">
+            <button className="px-2 py-1 border-2 rounded-full">Genre</button>
+            <button className="px-2 py-1 border-2 rounded-full">Genre</button>
+            <button className="px-2 py-1 border-2 rounded-full">Genre</button>
+            <button className="px-2 py-1 border-2 rounded-full">Genre</button>
+            <button className="px-2 py-1 border-2 rounded-full">Genre</button>
+            <button className="px-2 py-1 border-2 rounded-full">Genre</button>
+            <button className="px-2 py-1 border-2 rounded-full">Genre</button>
+          </div>
+        </AccordionItemContainer>
         <div className="w-full flex justify-center items-center mt-5">
             <button type="submit" className="py-2 px-5 w-full  bg-purple-900 text-customWhite rounded-full">Search</button>
         </div>

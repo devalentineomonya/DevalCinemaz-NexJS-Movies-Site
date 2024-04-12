@@ -14,9 +14,9 @@ const NavItem = ({ searching, tab, isActive, lastItem }) => {
   };
 
   return (
-    <header className="relative ml-[20px] ">
+    <div className="relative ml-[20px] ">
       <div
-        className={` pr-[20px] mr-[10px]  cursor-pointer text-customWhite flex justify-between items-center  border-slate-600 ${ tab.id===lastItem ? null : "border-r-[1px]"} ${
+        className={` pr-[20px] mr-[10px]  cursor-pointer flex justify-between items-center  border-slate-600 ${ tab.id===lastItem ? null : "border-r-[1px]"} ${
           searching ? "hidden" : null
         }`}
         onClick={handleSubMenuToggle}
@@ -40,7 +40,7 @@ const NavItem = ({ searching, tab, isActive, lastItem }) => {
           ))}
         </div>
       )}
-    </header>
+    </div>
   );
 };
 

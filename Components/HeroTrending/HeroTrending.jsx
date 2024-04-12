@@ -1,16 +1,15 @@
+"use client"
 import Image from "next/image";
 import React from "react";
 import HeroTrendingButtons from "./HeroTrendingButtons/HeroTrendingButtons";
 import testImage from "@/assets/testImage.jpg";
-const HeroTrending = () => {
+const HeroTrending = ({setVideoPlaying, action}) => {
   return (
     <div className="w-full h-[70vh]  relative  cursor-default">
-      <div className="absolute w-full h-full">
-      <div className="bg-gradient-to-r dark:from-customDark dark:via-gray-800 dark:to-black h-full w-full absolute left-0 top-0 opacity-[0.7]"></div>
- <Image
+        <div className="bg-gradient-to-r from-customDark via-gray-800 to-black h-full w-full absolute left-0 top-0 dark:opacity-[0.7] opacity-40"></div>
+      <div className=" w-full h-full">
+        <Image
           src={testImage}
-          w={100}
-          h={100}
           className="w-full h-full object-cover"
         />
         <div className=" w-[40%] h-[70%] absolute bottom-20 left-40 z-20">
@@ -59,8 +58,12 @@ const HeroTrending = () => {
             </ul>
           </div>
           <div className="mt-3 flex flex-row ">
-            <HeroTrendingButtons />
+            <HeroTrendingButtons setVideoPlaying={setVideoPlaying} action={action} />
           </div>
+        </div>
+
+        <div className="w-72 h-96 rounded-md z-20 absolute right-20 bottom-20 overflow-hidden">
+          <Image className="w-full h-full object-cover" src={testImage}/>
         </div>
       </div>
     </div>

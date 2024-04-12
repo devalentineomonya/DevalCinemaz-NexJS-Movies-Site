@@ -6,7 +6,7 @@ import testImage  from "@/assets/testImage.jpg"
 
 const NewRelease = ({width}) => {
   return (
-    <div className={`h-[380px] ${width} rounded-md overflow-hidden dark:bg-gray-950 bg-slate-200 flex flex-col flex-shrink-0`}>
+    <div className={`h-[380px] w-${width} rounded-md overflow-hidden dark:bg-gray-950 bg-slate-200 flex flex-col flex-shrink-0`}>
       <div className="h-[80%] relative">
         <Image src={testImage} className="absolute w-full h-full object-cover" />
       </div>

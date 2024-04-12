@@ -1,8 +1,12 @@
+import MediaDetailsContainer from "@/Components/MediaDetailsContainer/MediaDetailsContainer"
+import SeriesNavbar from "@/Components/SeriesNavbar/SeriesNavbar"
+
 const page = ({params}) => {
   return (
-    <div className="pt-[65px] bg-customDark">
-      <h1>This is the details page for move {params.movieId}</h1>
-    </div>
+    <>
+    <SeriesNavbar/>
+    <MediaDetailsContainer/>
+    </>
   )
 }
 

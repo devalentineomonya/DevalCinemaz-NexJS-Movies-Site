@@ -41,7 +41,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="w-full h-16 bg-transparent backdrop-blur-3xl fixed top-0 flex justify-center items-center z-50 shadow-2xl ">
+    <header className="w-full h-16 bg-transparent backdrop-blur-3xl fixed top-0 flex justify-center items-center z-50 shadow-2xl  dark:text-customWhite text-customDark   ">
       <div className="w-full max-w-[1400px]  flex justify-between items-center">
         <div className="w-fit">
           <h1 className={styles.title}>
@@ -69,7 +69,7 @@ const Navbar = () => {
           </ul>
         </nav>
         <div
-          className={` mx-5 dark:text-customWhite text-customDark  transition-all ease-in-out duration-300 ${
+          className={` mx-5   transition-all ease-in-out duration-300 ${
             searching ? "w-full" : "w-[0%]"
           }`}
         >
@@ -77,21 +77,21 @@ const Navbar = () => {
         </div>
         <div className="flex justify-between w-fit pr-5">
           <div
-            className="text-customWhite  mr-5 cursor-pointer hover:text-customOrange-300 transition-all ease-in-out duration-300"
+            className="  mr-5 cursor-pointer hover:text-customOrange-300 transition-all ease-in-out duration-300"
             onClick={() => setSearching((prev) => !prev)}
           >
             <IoSearchOutline size={18} />
           </div>
-          <div className="text-customWhite mr-5 cursor-pointer hover:text-customOrange-300 transition-all ease-in-out duration-300">
+          <div className=" mr-5 cursor-pointer hover:text-customOrange-300 transition-all ease-in-out duration-300">
             <RiUserAddLine size={18} />
           </div>
-          <div className="text-customWhite mr-5 cursor-pointer hover:text-customOrange-300 transition-all ease-in-out duration-300">
+          <div className=" mr-5 cursor-pointer hover:text-customOrange-300 transition-all ease-in-out duration-300">
             <GoBell size={18} />
           </div>
           <ModeToggler />
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
