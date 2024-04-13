@@ -4,7 +4,7 @@ import SeriesNavbar from "@/Components/SeriesNavbar/SeriesNavbar"
 const page = ({params}) => {
   return (
     <>
-    <SeriesNavbar/>
+    <SeriesNavbar pt="[65px]" h="[115px]"/>
     <MediaDetailsContainer/>
     </>
   )
