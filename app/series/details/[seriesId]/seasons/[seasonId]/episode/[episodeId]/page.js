@@ -7,7 +7,7 @@ import React from 'react'
 const page = () => {
   return (
     <div className='dark:bg-customDark bg-customWhite w-full text-customDark  dark:text-customWhite'>
-      <SeriesNavbar />
+      <SeriesNavbar pt="[65px]" h="[115px]"/>
       <SeasonBanner />
       <div className='flex flex-col w-full justify-center items-center'>
         <EpisodeSubNavbar/>

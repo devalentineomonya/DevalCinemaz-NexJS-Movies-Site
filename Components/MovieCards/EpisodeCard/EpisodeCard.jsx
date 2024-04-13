@@ -5,6 +5,7 @@ import { BsChevronDown } from "react-icons/bs";
 import { TECollapse } from "tw-elements-react";
 import testImage from "@/assets/testImage.jpg";
 import { RiStarFill } from "react-icons/ri";
+import GuestStart from "@/Components/GuestStart/GuestStart";
 const EpisodeCard = () => {
   const [activeElement, setActiveElement] = useState("");
 
@@ -75,7 +76,22 @@ const EpisodeCard = () => {
       <TECollapse
         show={activeElement === "element1"}
         className={`!mt-0 !rounded-b-none !shadow-none transition-all ease-in-out duration-300 pb-2 `}
-      ></TECollapse>
+      >
+        <div className="flex flex-col justify-center items-center">
+          <p className="w-3/4">Guest Starts</p>
+          <div className="flex justify-center">
+            <div className="w-3/4 flex flex-row items-center justify-center flex-wrap gap-x-4 gap-y-6">
+              <GuestStart />
+              <GuestStart />
+              <GuestStart />
+              <GuestStart />
+              <GuestStart />
+              <GuestStart />
+              <GuestStart />
+            </div>
+          </div>
+        </div>
+      </TECollapse>
     </div>
   );
 };

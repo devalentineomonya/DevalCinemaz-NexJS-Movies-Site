@@ -6,7 +6,7 @@ import React from 'react'
 const page = () => {
   return (
     <div className='dark:bg-customDark bg-customWhite'>
-      <SeriesNavbar />
+     <SeriesNavbar pt="[65px]" h="[115px]"/>
       <SeasonBanner />
       <div className='flex flex-col '>
         <SeasonCard/>

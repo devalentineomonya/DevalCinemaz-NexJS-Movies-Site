@@ -32,7 +32,7 @@ const UserProfileBanner = () => {
           </div>
           <div>
             <div className=" flex gap-x-3 flex-row items-center">
-              <h1 className="font-bold text-4xl font-Arial dark:text-customWhite text-customDark">MartinNinjah</h1>
+              <h1 className="font-bold text-4xl font-Arial text-customWhite">MartinNinjah</h1>
               <span className="text-xl font-Dosis text-gray-100">
                 Member since march 2024
               </span>
