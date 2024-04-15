@@ -6,7 +6,8 @@ import { IoSearchOutline } from "react-icons/io5";
 import SearchForm from "./SearchForm/SearchForm";
 import NavItem from "./NavItem/NavItem";
 import ModeToggler from "../ModeToggler/ModeToggler";
-import styles from './GlowingTitle.module.css';
+import styles from "./GlowingTitle.module.css";
+import Link from "next/link";
 
 const Navbar = () => {
   const [searching, setSearching] = useState(false);
@@ -25,7 +26,7 @@ const Navbar = () => {
     {
       id: 2,
       name: "Series",
-      subMenu: ["Popular", "Airing Today", "On TV", " Top Rated"],
+      subMenu: ["Popular", "Airing Today", "On TV", "Top Rated"],
     },
 
     {
@@ -44,9 +45,9 @@ const Navbar = () => {
     <header className="w-full h-16 bg-transparent backdrop-blur-3xl fixed top-0 flex justify-center items-center z-50 shadow-2xl  dark:text-customWhite text-customDark   ">
       <div className="w-full max-w-[1400px]  flex justify-between items-center">
         <div className="w-fit">
-          <h1 className={styles.title}>
-            DevalCinemaz
-          </h1>
+          <Link href="/">
+            <h1 className={styles.title}>DevalCinemaz</h1>
+          </Link>
         </div>
 
         <nav

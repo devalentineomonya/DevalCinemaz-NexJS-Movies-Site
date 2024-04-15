@@ -5,6 +5,7 @@ import testImage from "@/assets/testImage.jpg"
 import { BsPlus } from 'react-icons/bs'
 import LoginFrom from '@/Components/LoginFrom/LoginFrom'
 import RegistrationForm from '@/Components/RegistrationForm/RegistrationForm'
+import Link from 'next/link'
 
 const page = () => {
     const [login, setLogin] = useState(true)
@@ -14,7 +15,7 @@ const page = () => {
             <Image src={testImage} className='h-full w-full ' />
             <div className='w-full h-full flex justify-center items-center absolute top-0 pt-[65px]'>
                 <div className="w-[400px] h-[65vh] bg-customWhite rounded-lg relative py-5 px-5 flex items-center justify-center">
-                    <button className='absolute top-0 right-0 transform rotate-45'><BsPlus size={45} /></button>
+                    <Link href="/"><button className='absolute top-0 right-0 transform rotate-45'><BsPlus size={45} /></button></Link>
                     <div className='w-[90%] h-[90%] px-4'>
                         <div className='flex justify-center items-center flex-col'>
                             <h1 className='font-bold text-4xl font-Dosis'>Welcome Back !</h1>

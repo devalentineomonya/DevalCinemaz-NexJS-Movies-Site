@@ -1,28 +1,14 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import useTheme from "@/hooks/useTheme";
+import React, {  useState } from "react";
 import { GoMoon } from "react-icons/go";
 
 import { IoSunny } from "react-icons/io5";
 
 const ModeToggler = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(true);
-  useEffect(() => {
-    const theme = localStorage.getItem("theme");
-    if (theme === "dark") {
-      setDarkMode(true);
-    }
-  }, []);
+  const [theme, setTheme, darkMode, setDarkMode] = useTheme();
 
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [darkMode]);
 
   return (
     <div className="relative  mr-5 cursor-pointer transition-all ease-in-out duration-300">

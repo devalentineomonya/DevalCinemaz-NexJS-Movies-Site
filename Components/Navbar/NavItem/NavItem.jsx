@@ -1,4 +1,5 @@
 // NavItem.js
+import Link from "next/link";
 import React, { useRef } from "react";
 
 const NavItem = ({ searching, tab, isActive, lastItem }) => {
@@ -16,9 +17,9 @@ const NavItem = ({ searching, tab, isActive, lastItem }) => {
   return (
     <div className="relative ml-[20px] ">
       <div
-        className={` pr-[20px] mr-[10px]  cursor-pointer flex justify-between items-center  border-slate-600 ${ tab.id===lastItem ? null : "border-r-[1px]"} ${
-          searching ? "hidden" : null
-        }`}
+        className={` pr-[20px] mr-[10px]  cursor-pointer flex justify-between items-center  border-slate-600 ${
+          tab.id === lastItem ? null : "border-r-[1px]"
+        } ${searching ? "hidden" : null}`}
         onClick={handleSubMenuToggle}
       >
         {tab.name}
@@ -31,12 +32,19 @@ const NavItem = ({ searching, tab, isActive, lastItem }) => {
           } `}
         >
           {tab.subMenu.map((menu, i) => (
-            <div
+            <Link
               key={i}
-              className="text-[14px] px-3 cursor-pointer dark:hover:bg-gray-800 hover:bg-gray-100 p-1 rounded "
+              href={`/${
+                tab.id === 3
+                  ? "user"
+                  : tab.name.toLowerCase().replaceAll(" ", "-")
+              }/${tab.id === 4 ? "" : menu.toLowerCase().replaceAll(" ", "-")}`}
             >
-              {menu}
-            </div>
+              <div className="text-[14px] px-3 cursor-pointer dark:hover:bg-gray-800 hover:bg-gray-100 p-1 rounded ">
+                {" "}
+                {menu}
+              </div>
+            </Link>
           ))}
         </div>
       )}

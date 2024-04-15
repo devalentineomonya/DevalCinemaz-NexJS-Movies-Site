@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
@@ -33,9 +34,11 @@ const Footer = () => {
             </p>
             <ul className="flex flex-col gap-y-5 mt-8">
               {navItem.navItem.map((Item, i) => (
-                <li className="dark:text-customWhite text-customDark hover:text-customGreen  transition-all ease-in-out duration-300 cursor-pointer font-semibold" key={i}>
+                <Link  href={`/${ navItem.id === 4 ? "user" : navItem.name.replaceAll(" ","-").toLowerCase()}/${ navItem.id===3 ? "" : Item.replaceAll(" ","-").toLowerCase()}`} key={i}>
+                <li className="dark:text-customWhite text-customDark hover:text-customGreen  transition-all ease-in-out duration-300 cursor-pointer font-semibold" >
                   {Item}
                 </li>
+                </Link>
               ))}
             </ul>
           </div>

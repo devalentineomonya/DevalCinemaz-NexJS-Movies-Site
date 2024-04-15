@@ -4,22 +4,22 @@ import profileBannerDark from "@/assets/profileBannerDark.png";
 import testImage from "@/assets/testImage.jpg";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import useTheme from "@/hooks/useTheme";
 
 const UserProfileBanner = () => {
-  const [darkMode, setDarkMode] = useState(true);
-
+  const [theme, setTheme, darkMode, setDarkMode] = useTheme();
   useEffect(() => {
-    const theme = localStorage.getItem("theme");
-    if (theme === "dark") {
-      setDarkMode(true);
-    }
-  }, []);
+    
+  }, [theme, darkMode]);
+
+  // Update the banner image based on darkMode
+  const bannerImage = darkMode ? profileBannerDark : profileBannerLight;
 
   return (
     <div className="w-full h-64 relative flex justify-center items-center ">
       <div className="absolute bg-gradient-to-tr from-black via-gray-900 to-gray-950 bg-opacity-50 top-0 bottom-0 w-full"></div>
       <Image
-        src={darkMode ? profileBannerDark : profileBannerLight}
+        src={bannerImage}
         className="w-full h-full absolute"
       />
       <div className="w-full max-w-[1400px]  h-56 z-30 flex items-center">
