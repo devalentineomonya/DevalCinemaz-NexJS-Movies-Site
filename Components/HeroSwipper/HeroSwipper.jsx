@@ -23,7 +23,7 @@ export default function HeroSwipper({ sliderMovies }) {
         modules={[Pagination]}
         className="mySwiper"
       >
-        {sliderMovies.map((sliderMovie, i) => (
+        {sliderMovies.slice(0,10).map((sliderMovie, i) => (
           <SwiperSlide key={i}>
             <HeroTrending sliderMovie={sliderMovie} />
           </SwiperSlide>

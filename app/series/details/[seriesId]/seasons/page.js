@@ -1,23 +1,28 @@
-import SeasonCard from '@/Components/MovieCards/SeasonCard/SeasonCard'
 import SeasonBanner from '@/Components/SeasonBanner/SeasonBanner'
 import SeriesNavbar from '@/Components/SeriesNavbar/SeriesNavbar'
-import React from 'react'
+import SeriesSeasonsContainer from '@/Components/SeriesSeasonsContainer/SeriesSeasonsContainer'
+import { getInfo } from '@/app/Api/api'
 
-const page = () => {
-  return (
-    <div className='dark:bg-customDark bg-customWhite'>
-     <SeriesNavbar pt="[65px]" h="[115px]"/>
-      <SeasonBanner />
-      <div className='flex flex-col '>
-        <SeasonCard/>
-        <SeasonCard/>
-        <SeasonCard/>
-        <SeasonCard/>
-        <SeasonCard/>
-        <SeasonCard/>
+
+const page = async ({ params }) => {
+  const seriesId = parseInt(params.seriesId);
+
+  if (isNaN(seriesId)) {
+    return <NotFound />
+  }
+
+  try {
+    const seriesData = await getInfo(seriesId, "tv")
+    return (
+      <div className='dark:bg-customDark bg-customWhite'>
+        <SeriesNavbar pt="[65px]" h="[115px]" />
+        <SeasonBanner seriesData={seriesData} />
+        <SeriesSeasonsContainer seriesData={seriesData} seriesId={seriesId}/>
       </div>
-    </div>
-  )
-}
+    )
+  } catch (error) {
+    console.error("Error fetching data:", error);
 
+  }
+}
 export default page

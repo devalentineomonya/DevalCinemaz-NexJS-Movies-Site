@@ -1,9 +1,24 @@
-import React from 'react'
+"use client"
+import useTheme from '@/hooks/useTheme';
+import React, { useState } from 'react'
+import { ScaleLoader } from 'react-spinners';
+
 
 const loading = () => {
+  const [theme] = useTheme()
+  
+  let [color, setColor] = useState(theme === "dark" ?  "#ffffff" : "#000000");
+
   return (
-    <div>
-      This is the loading
+    <div className="h-screen w-full bg-customWhite dark:bg-customDark flex justify-center items-center ">
+      <ScaleLoader
+        color={color}
+        loading={true}
+        
+        size={150}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      />
     </div>
   )
 }

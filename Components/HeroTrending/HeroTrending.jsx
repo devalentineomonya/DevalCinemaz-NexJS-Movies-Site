@@ -4,7 +4,7 @@ import React from "react";
 import HeroTrendingButtons from "./HeroTrendingButtons/HeroTrendingButtons";
 const HeroTrending = ({ setVideoPlaying, action, sliderMovie }) => {
 
-  const movieTitle = sliderMovie.original_title;
+  const movieTitle = sliderMovie.original_title || sliderMovie.name;
   const firstWord = movieTitle.split(" ")[0];
   const remainingWords = movieTitle.substring(firstWord.length).trim();
 
@@ -16,7 +16,7 @@ const HeroTrending = ({ setVideoPlaying, action, sliderMovie }) => {
         <Image
           src={`https://image.tmdb.org/t/p/original${sliderMovie.backdrop_path}`}
           className="w-full h-full object-cover"
-          alt={sliderMovie.original_title}
+          alt={sliderMovie.original_title || sliderMovie.name}
           width={100}
           height={100}
         />
@@ -78,7 +78,7 @@ const HeroTrending = ({ setVideoPlaying, action, sliderMovie }) => {
               // src={`${process.env.IMAGE_URL}${sliderMovie.poster_path}`} 
               width={100}
               height={100}
-              alt={sliderMovie.original_title}
+              alt={sliderMovie.original_title || sliderMovie.name}
               priority
             />
           </div>
