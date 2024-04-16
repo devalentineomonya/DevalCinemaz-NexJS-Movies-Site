@@ -11,8 +11,10 @@ const HomeMainSection = ({
   upcomingMovies,
   topRatedMovies,
   topRatedSeries,
+  nowPlayingMovies,
+  seriesAiringToday,
 }) => {
-  console.log(topRatedMovies);
+  console.log(seriesAiringToday);
   return (
     <main className="dark:bg-customDark bg-customWhite w-full flex justify-center  h-fit pb-20">
       <div className="max-w-[1400px]  px-10 pt-10 w-full flex flex-col ">
@@ -62,24 +64,29 @@ const HomeMainSection = ({
                 />
               ))}
         </SmallSectionContainer>
-        <SmallSectionContainer title="This is a dynamic title" viewMore={true}>
-          {/* <TrendingMovies
-            mediaInfo={topRatedMovie}
-            key={i}
-            mediaType="movies"
-          /> */}
+        <SmallSectionContainer title="Now Playing Movies" viewMore={true}>
+          {nowPlayingMovies &&
+            nowPlayingMovies
+              .slice(7, 17)
+              .map((nowPlayingMovie, i) => (
+                <TrendingMovies
+                  mediaInfo={nowPlayingMovie}
+                  key={i}
+                  mediaType="movies"
+                />
+              ))}
         </SmallSectionContainer>
-        <SmallSectionContainer title="This is a dynamic title" viewMore={true}>
-          <MovieInCategory />
-          <MovieInCategory />
-          <MovieInCategory />
-          <MovieInCategory />
-          <MovieInCategory />
-          <MovieInCategory />
-          <MovieInCategory />
-          <MovieInCategory />
-          <MovieInCategory />
-          <MovieInCategory />
+        <SmallSectionContainer title="Series Airing Today" viewMore={true}>
+          {seriesAiringToday &&
+            seriesAiringToday
+              .slice(6, 16)
+              .map((seriesAiringTodayInfo, i) => (
+                <MovieInCategory
+                  seriesAiringTodayInfo={seriesAiringTodayInfo}
+                  key={i}
+                  mediaType="series"
+                />
+              ))}
         </SmallSectionContainer>
       </div>
     </main>

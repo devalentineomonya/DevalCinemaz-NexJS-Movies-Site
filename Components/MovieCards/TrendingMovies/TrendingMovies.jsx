@@ -12,7 +12,7 @@ const TrendingMovies = ({ mediaInfo, mediaType }) => {
       (mediaInfo && mediaInfo.poster_path) || fallbackImage
     }`
   );
-  console.log(mediaInfo);
+
   return (
     <div
       className="w-72 h-96 flex flex-shrink-0 relative overflow-hidden rounded-md"

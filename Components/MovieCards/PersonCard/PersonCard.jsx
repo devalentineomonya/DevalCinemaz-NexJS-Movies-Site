@@ -17,6 +17,7 @@ const PersonCard = ({ width, cast }) => {
           onError={() => {
             setImage(fallbackImage);
           }}
+          alt={cast.character}
         />
       </div>
       <div className="px-2 ">

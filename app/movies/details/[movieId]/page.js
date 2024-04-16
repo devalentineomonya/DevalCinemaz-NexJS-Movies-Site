@@ -1,4 +1,4 @@
-import { getInfo, getVideoInfo, getCastList, getReviews, getRecommended, getSimilar, getUpcoming } from "@/app/Api/api";
+import { getInfo, getVideoInfo, getCastList, getReviews, getMediaItems, getSimilar } from "@/app/Api/api";
 import MediaDetailsContainer from "@/Components/MediaDetailsContainer/MediaDetailsContainer";
 import NotFound from "../../not-found";
 
@@ -15,9 +15,9 @@ const page = async ({ params }) => {
       getVideoInfo(movieId,"movie"),
       getCastList(movieId,"movie"),
       getReviews(movieId,"movie"),
-      getRecommended(movieId,"movie"),
+      getMediaItems(movieId,"movie","recommendations"),
       getSimilar(movieId,"movie"),
-      getUpcoming(),
+      getMediaPerCategory("upcoming","movie"),
     ]);
 
     const [movieInfo, videoInfo, castList, movieReviews, recommendedMovies, similarMovies, upcomingMovies] = movieData;

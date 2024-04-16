@@ -1,26 +1,58 @@
+"use client";
 import Image from "next/image";
-import React from "react";
-import testImage from "@/assets/testImage.jpg";
-const MovieInCategory = () => {
+import React, { useState } from "react";
+import fallbackImage from "@/assets/fallbackImage.svg";
+import Link from "next/link";
+const MovieInCategory = ({ seriesAiringTodayInfo, mediaType }) => {
+  const [image, setImage] = useState(
+    `https://image.tmdb.org/t/p/original${
+      (seriesAiringTodayInfo && seriesAiringTodayInfo.poster_path) ||
+      fallbackImage
+    }`
+  );
+
   return (
     <div className=" h-[420px] w-72 rounded-md overflow-hidden dark:bg-gray-950 bg-slate-200 flex flex-col flex-shrink-0">
       <div className="h-[85%] relative">
-        <Image
-          src={testImage}
-          className="absolute w-full h-full object-cover"
-        />
+        <Link
+          href={`/${mediaType.toLowerCase()}/details/${
+            seriesAiringTodayInfo && seriesAiringTodayInfo.id
+          }`}
+        >
+          <Image
+            src={image}
+            className="absolute w-full h-full object-cover"
+            alt={
+              (seriesAiringTodayInfo && seriesAiringTodayInfo.original_title) ||
+              (seriesAiringTodayInfo && seriesAiringTodayInfo.name)
+            }
+            onError={() => setImage(fallbackImage)}
+            width={100}
+            height={100}
+          />
+        </Link>
       </div>
-      <div className="flex justify-center items-center flex-col cursor-pointer">
-        <p className="dark:text-customWhite text-customDark font-Inter font-semibold text-md mt-2">
-          Movie Tittle
-        </p>
-        <p className="dark:text-customWhite text-customDark font-Inter font-semibold text-md mt-2">
-         Category
-        </p>
-        <p className="dark:text-customWhite text-customDark font-Inter font-semibold text-md">
-          2010
-        </p>
-      </div>
+      <Link
+        href={`/${mediaType.toLowerCase()}/details/${
+          seriesAiringTodayInfo && seriesAiringTodayInfo.id
+        }`}
+      >
+        <div className="flex justify-center items-center flex-col cursor-pointer">
+          <p className="dark:text-customWhite text-customDark font-Inter font-semibold text-md mt-2">
+            {(seriesAiringTodayInfo && seriesAiringTodayInfo.original_title) ||
+              (seriesAiringTodayInfo && seriesAiringTodayInfo.name)}
+          </p>
+          <p className="dark:text-customWhite text-customDark font-Inter font-semibold text-md mt-2 capitalize">
+            {`${mediaType} ${
+              seriesAiringTodayInfo.adult ? "for Adults" : "for All"
+            }`}
+          </p>
+          <p className="dark:text-customWhite text-customDark font-Inter font-semibold text-md">
+            {seriesAiringTodayInfo &&
+              new Date(seriesAiringTodayInfo.first_air_date).getFullYear()}
+          </p>
+        </div>
+      </Link>
     </div>
   );
 };

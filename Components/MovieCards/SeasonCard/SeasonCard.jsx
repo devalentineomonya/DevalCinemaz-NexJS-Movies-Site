@@ -6,7 +6,6 @@ import { RiStarFill } from "react-icons/ri";
 import Link from "next/link";
 
 const SeasonCard = ({ season, number, seriesId }) => {
-  console.log(seriesId);
   const [image, setImage] = useState(
     `https://image.tmdb.org/t/p/original${
       (season && season.poster_path) || fallbackImage

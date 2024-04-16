@@ -1,6 +1,6 @@
 import MediaDetailsContainer from "@/Components/MediaDetailsContainer/MediaDetailsContainer"
 import SeriesNavbar from "@/Components/SeriesNavbar/SeriesNavbar"
-import { getInfo, getVideoInfo, getCastList, getReviews, getRecommended, getSimilar, getOnTheAir } from "@/app/Api/api";
+import { getInfo, getVideoInfo, getCastList, getReviews, getMediaItems, getSimilar, getMediaPerCategory } from "@/app/Api/api";
 
 
 const page = async ({ params }) => {
@@ -16,9 +16,9 @@ const page = async ({ params }) => {
       getVideoInfo(seriesId, "tv"),
       getCastList(seriesId, "tv"),
       getReviews(seriesId, "tv"),
-      getRecommended(seriesId, "tv"),
+      getMediaItems(seriesId, "tv","recommendations"),
       getSimilar(seriesId, "tv"),
-      getOnTheAir(),
+      getMediaPerCategory("tv","on_the_air")
     ]);
 
     const [seriesInfo, videoInfo, castList, seriesReviews, recommendedSeries, similarSeries, upcomingSeries] = movieData;
