@@ -1,23 +1,24 @@
 import MediaDetailsContainer from "@/Components/MediaDetailsContainer/MediaDetailsContainer"
 import SeriesNavbar from "@/Components/SeriesNavbar/SeriesNavbar"
-import { getInfo, getVideoInfo, getCastList, getReviews, getMediaItems, getSimilar, getMediaPerCategory } from "@/app/Api/api";
+import { getInfo, getMediaItems, getMediaPerCategory } from "@/app/Api/api";
+import NotFound from "@/app/movies/not-found";
 
 
 const page = async ({ params }) => {
   const seriesId = parseInt(params.seriesId);
 
   if (isNaN(seriesId)) {
-    return <NotFoun />
+    return <NotFound />
   }
 
   try {
     const movieData = await Promise.all([
       getInfo(seriesId, "tv"),
-      getVideoInfo(seriesId, "tv"),
-      getCastList(seriesId, "tv"),
-      getReviews(seriesId, "tv"),
+      getMediaItems(seriesId,"tv","videos"),
+      getMediaItems(seriesId,"tv","credits"),
+      getMediaItems(seriesId,"tv","reviews"),
       getMediaItems(seriesId, "tv","recommendations"),
-      getSimilar(seriesId, "tv"),
+      getMediaItems(seriesId,"tv","similar"),
       getMediaPerCategory("tv","on_the_air")
     ]);
 

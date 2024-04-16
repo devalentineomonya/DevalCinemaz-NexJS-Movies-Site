@@ -1,4 +1,4 @@
-import { getInfo, getVideoInfo, getCastList, getReviews, getMediaItems, getSimilar } from "@/app/Api/api";
+import { getInfo, getMediaItems, getMediaPerCategory } from "@/app/Api/api";
 import MediaDetailsContainer from "@/Components/MediaDetailsContainer/MediaDetailsContainer";
 import NotFound from "../../not-found";
 
@@ -12,11 +12,11 @@ const page = async ({ params }) => {
   try {
     const movieData = await Promise.all([
       getInfo(movieId,"movie"),
-      getVideoInfo(movieId,"movie"),
-      getCastList(movieId,"movie"),
-      getReviews(movieId,"movie"),
+      getMediaItems(movieId,"movie","videos"),
+      getMediaItems(movieId,"movie","credits"),
+      getMediaItems(movieId,"movie","reviews"),
       getMediaItems(movieId,"movie","recommendations"),
-      getSimilar(movieId,"movie"),
+      getMediaItems(movieId,"movie","similar"),
       getMediaPerCategory("upcoming","movie"),
     ]);
 

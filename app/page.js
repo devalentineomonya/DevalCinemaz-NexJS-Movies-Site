@@ -2,7 +2,7 @@ import Associates from "@/Components/Associates/Associates";
 import FooterBanner from "@/Components/FooterBanner/FooterBanner";
 import HeroSwipper from "@/Components/HeroSwipper/HeroSwipper";
 import HomeMainSection from "@/Components/HomeMainSection/HomeMainSection";
-import { fetchCountryName, trendingMovies, discoverMovies, getMediaPerCategory } from "./Api/api";
+import { fetchCountryName, getMediaPerCategory } from "./Api/api";
 
 
 export default async function Home() {
@@ -10,8 +10,8 @@ export default async function Home() {
   try {
     const homePage = await Promise.all([
       fetchCountryName(),
-      trendingMovies(),
-      discoverMovies(),
+      getMediaPerCategory("trending", "movie"),
+      getMediaPerCategory("discover","movie"),
       getMediaPerCategory("upcoming", "movie"),
       getMediaPerCategory("top_rated", "movie"),
       getMediaPerCategory("top_rated", "tv"),

@@ -19,6 +19,7 @@ const MediaDetailsContainer = ({
   upcomingMovies = [],
   type,
 }) => {
+  console.log(recommendedMovies);
   const [videoPlaying, setVideoPlaying] = useState(false);
 
   return (

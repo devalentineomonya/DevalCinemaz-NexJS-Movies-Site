@@ -7,74 +7,26 @@ export const fetchData = async (url) => {
 };
 
 
-
 export const getInfo = async (id, fetchType) => {
     return fetchData(`${process.env.BASE_URL}/${fetchType}/${id}?api_key=${process.env.API_KEY}`);
 };
 
 
-
-
-
-export const getSimilar = async (id, fetchType) => {
-    return fetchData(`${process.env.BASE_URL}/${fetchType}/${id}/similar?api_key=${process.env.API_KEY}`)
-        .then((data) => data.results);
-};
-
-
 export const getMediaItems = async (id, fetchType, itemType) => {
-    return fetchData(`${process.env.BASE_URL}/${fetchType}/${id}/${itemType}?api_key=${process.env.API_KEY}`)
+    const data = await fetchData(`${process.env.BASE_URL}/${fetchType}/${id}/${itemType}?api_key=${process.env.API_KEY}`);
+    if (itemType === "videos") {
+        const trailer = data.results && data.results.find((v) => v.type === "Trailer") || data.results[0] || [];
+        return trailer;
+    } else {
+        return data.results;
+    }
+};
+
+export const getMediaPerCategory = async (mediaType, fetchType, page=1) => {
+    return fetchData(`${process.env.BASE_URL}/${fetchType}/${mediaType}?page=${page}&api_key=${process.env.API_KEY}`)
         .then((data) => data.results);
 };
 
-
-
-export const getVideoInfo = async (id, fetchType) => {
-    return fetchData(`${process.env.BASE_URL}/${fetchType}/${id}/videos?api_key=${process.env.API_KEY}`)
-        .then((data) => {
-            const trailer = data.results && data.results.find((v) => v.type === "Trailer") || data.results[0] || [];
-            return trailer;
-        });
-};
-
-
-export const getCastList = async (id, fetchType) => {
-    return fetchData(`${process.env.BASE_URL}/${fetchType}/${id}/credits?api_key=${process.env.API_KEY}`)
-        .then((data) => data.cast);
-};
-
-
-
-export const getReviews = async (id, fetchType) => {
-    return fetchData(`${process.env.BASE_URL}/${fetchType}/${id}/reviews?api_key=${process.env.API_KEY}`)
-        .then((data) => data.results);
-};
-
-
-
-
-
-
-
-
-
-
-export const getMediaPerCategory = async (mediaType, fetchType) => {
-    return fetchData(`${process.env.BASE_URL}/${fetchType}/${mediaType}?api_key=${process.env.API_KEY}`)
-        .then((data) => data.results);
-};
-
-export const discoverMovies = async () => {
-    return fetchData(`${process.env.BASE_URL}/discover/movie?api_key=${process.env.API_KEY}`)
-        .then((data) => data.results )
-}
-
-
-export const trendingMovies = async () => {
-    return fetchData(`${process.env.BASE_URL}/trending/movie/day?api_key=${process.env.API_KEY}`)
-        .then((data) => data.results)
-
-}
 
 export const fetchCountryName = async () => {
     return fetchData('https://ipapi.co/json/')
