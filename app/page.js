@@ -10,13 +10,13 @@ export default async function Home() {
   try {
     const homePage = await Promise.all([
       fetchCountryName(),
-      getMediaPerCategory("trending", "movie"),
-      getMediaPerCategory("discover","movie"),
-      getMediaPerCategory("upcoming", "movie"),
-      getMediaPerCategory("top_rated", "movie"),
-      getMediaPerCategory("top_rated", "tv"),
-      getMediaPerCategory("now_playing", "movie"),
-      getMediaPerCategory("airing_today","tv")
+      getMediaPerCategory("trending", "movie", 1),
+      getMediaPerCategory("discover", "movie", 2),
+      getMediaPerCategory("upcoming", "movie", 4),
+      getMediaPerCategory("top_rated", "movie", 6),
+      getMediaPerCategory("top_rated", "tv", 5),
+      getMediaPerCategory("now_playing", "movie", 2),
+      getMediaPerCategory("airing_today", "tv", 4)
 
 
     ]);
@@ -28,14 +28,15 @@ export default async function Home() {
     return (
       <>
         <HeroSwipper sliderMovies={sliderMovies} />
-        <HomeMainSection trendingMoviesRes={trendingMoviesRes} 
-        countryName={countryName}
-         upcomingMovies={upcomingMovies} 
-         topRatedMovies={topRatedMovies} 
-         topRatedSeries={topRatedSeries} 
-         nowPlayingMovies={nowPlayingMovies}
-         seriesAiringToday={seriesAiringToday}
-         />
+        <HomeMainSection
+          countryName={countryName}
+          trendingMoviesRes={trendingMoviesRes}
+          upcomingMovies={upcomingMovies}
+          topRatedMovies={topRatedMovies}
+          topRatedSeries={topRatedSeries}
+          nowPlayingMovies={nowPlayingMovies}
+          seriesAiringToday={seriesAiringToday}
+        />
         <FooterBanner />
         <Associates />
       </>

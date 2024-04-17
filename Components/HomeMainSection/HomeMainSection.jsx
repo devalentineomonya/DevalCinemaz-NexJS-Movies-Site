@@ -1,3 +1,4 @@
+"use client"
 import SmallSectionContainer from "./SmallSectionContainer/SmallSectionContainer";
 import TopMovieCard from "../MovieCards/TopMovieCard/TopMovieCard";
 import ComingSoon from "../MovieCards/ComingSoon/ComingSoon";
@@ -14,7 +15,6 @@ const HomeMainSection = ({
   nowPlayingMovies,
   seriesAiringToday,
 }) => {
-  console.log(seriesAiringToday);
   return (
     <main className="dark:bg-customDark bg-customWhite w-full flex justify-center  h-fit pb-20">
       <div className="max-w-[1400px]  px-10 pt-10 w-full flex flex-col ">

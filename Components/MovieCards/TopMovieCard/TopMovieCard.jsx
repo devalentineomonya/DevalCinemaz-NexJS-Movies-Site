@@ -1,10 +1,12 @@
+"use client"
 import Image from "next/image";
-import React from "react";
-import testImage from "@/assets/testImage.jpg"
+import React, { useState } from "react";
 import styles from "./OutlineText.module.css";
 import Link from "next/link";
+import fallbackImage from "@/assets/fallbackImage.svg";
 
 const TopMovieCard = ({number, trendingMovie}) => {
+  const [image, setImage] = useState(`https://image.tmdb.org/t/p/original${ trendingMovie && trendingMovie.backdrop_path || fallbackImage}`)
   return (
     <Link  href={`/movies/details/${trendingMovie.id}`}>
     
@@ -13,7 +15,7 @@ const TopMovieCard = ({number, trendingMovie}) => {
         <div className="h-full w-full flex justify-start items-end"><span className={` dark:text-customWhite text-customDark font-sans ${styles.strokeText}`}>{number}</span></div>
       </div>
       <div className="w-[60%] bg-gray-400 relative rounded-md overflow-hidden">
-        <Image src={`${process.env.IMAGE_URL}${trendingMovie.poster_path}`} className="absolute h-full w-full object-fill" width={100} height={100} alt={trendingMovie.original_title} />
+        <Image src={image} className="absolute h-full w-full object-fill" width={100} height={100} alt={trendingMovie.original_title} onError={()=>{setImage(fallbackImage)}} />
       </div>
     </div>
     </Link>
