@@ -19,7 +19,7 @@ const page = async ({ params }) => {
       getMediaItems(seriesId,"tv","reviews"),
       getMediaItems(seriesId, "tv","recommendations"),
       getMediaItems(seriesId,"tv","similar"),
-      getMediaPerCategory("tv","on_the_air")
+      getMediaPerCategory("on_the_air","tv")
     ]);
 
     const [seriesInfo, videoInfo, castList, seriesReviews, recommendedSeries, similarSeries, upcomingSeries] = movieData;

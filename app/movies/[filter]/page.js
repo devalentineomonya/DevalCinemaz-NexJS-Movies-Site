@@ -6,9 +6,20 @@ import NotFound from '../not-found';
 const page = async ({ params, searchParams }) => {
   const routeFilter = (params.filter).toString().replaceAll("-", "_");
 
-  const pageNumber = parseInt(searchParams.page)
-  const validPageNumber = searchParams && !isNaN(pageNumber) && pageNumber > 0 ? 1 : pageNumber;
-  
+  const pageNumber = parseInt(searchParams.page) || 1;
+  const validPageNumber = () => {
+    if (searchParams) {
+      if (!isNaN(pageNumber) || !pageNumber < 1) {
+        return pageNumber
+
+      } else {
+        return 1
+      }
+    } else {
+      return 1
+    }
+  }
+
   const possibleRoutes = ["now_playing", "upcoming", "popular", "top_rated"];
 
   if (!possibleRoutes.includes(routeFilter)) {
@@ -17,17 +28,17 @@ const page = async ({ params, searchParams }) => {
 
   try {
     const movieData = await Promise.all([
-      getMediaPerCategory(routeFilter, "movie", validPageNumber ? pageNumber : undefined),
+      getMediaPerCategory(routeFilter, "movie", validPageNumber() || 1),
     ]);
     const [moviesList] = movieData;
 
     return (
       <>
-        <MediaContainer mediaType="movies"  mediaList={moviesList} routeFilter={routeFilter} pageNumber={pageNumber} />
+        <MediaContainer mediaType="movies" mediaList={moviesList} routeFilter={routeFilter} pageNumber={pageNumber} />
       </>
     );
   } catch (error) {
-    console.error("Error fetching data:", error);
+    console.error("Error fetching data:", error.message);
   }
 };
 
