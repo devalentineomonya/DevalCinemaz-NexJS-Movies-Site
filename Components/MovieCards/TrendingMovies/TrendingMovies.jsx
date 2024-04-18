@@ -15,7 +15,7 @@ const TrendingMovies = ({ mediaInfo, mediaType }) => {
 
   return (
     <div
-      className="w-72 h-96 flex flex-shrink-0 relative overflow-hidden rounded-md"
+      className="w-72 h-96 flex flex-shrink-0 relative overflow-hidden rounded-md dark:bg-gray-950 bg-slate-200 "
       onMouseEnter={() => setMouseHover(true)}
       onMouseLeave={() => setMouseHover(false)}
     >

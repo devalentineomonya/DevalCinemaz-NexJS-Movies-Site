@@ -13,6 +13,7 @@ const MediaContainer = ({ mediaList, routeFilter, pageNumber, mediaType}) => {
           DevalCinemaz Top Movies{" "}
         </h1>
         <div className="flex flex-row gap-x-4  pt-4 w-full ">
+          
           <div className="w-[380px] list">
             <MoviesFilter />
           </div>

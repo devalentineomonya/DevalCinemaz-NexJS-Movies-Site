@@ -1,3 +1,4 @@
+"use client"
 import MediaContainer from '@/Components/MediaContainer/MediaContainer';
 import React from 'react';
 import { getMediaPerCategory } from '@/app/Api/api';
@@ -10,12 +11,20 @@ const page = async ({ params, searchParams }) => {
     ? "on_the_air"
     : (params.filter).toString().replaceAll("-", "_");
 
-  const pageNumber = parseInt(searchParams.page)
-  const validPageNumber = searchParams && !isNaN(pageNumber) && pageNumber > 0 ? 1 : pageNumber;
+  const pageNumber = parseInt(searchParams.page) || 1;
+  const validPageNumber = () => {
+    if (searchParams) {
+      if (!isNaN(pageNumber) || !pageNumber < 1) {
+        return pageNumber
 
+      } else {
+        return 1
+      }
+    } else {
+      return 1
+    }
+  }
 
-  console.log(searchParams);
-  console.log(routeFilter);
   const possibleRoutes = ["popular", "airing_today", "on_the_air", "top_rated"];
 
   if (!possibleRoutes.includes(routeFilter)) {
@@ -24,13 +33,14 @@ const page = async ({ params, searchParams }) => {
 
   try {
     const movieData = await Promise.all([
-      getMediaPerCategory(routeFilter, "tv", validPageNumber ? pageNumber : undefined),
+      getMediaPerCategory(routeFilter, "tv", validPageNumber() || 1,),
     ]);
     const [seriesList] = movieData;
 
     return (
       <>
-        <MediaContainer mediaList={seriesList} mediaType="series" routeFilter={routeFilter} pageNumber={pageNumber} />
+
+        <MediaContainer mediaList={seriesList} mediaType="series" routeFilter={routeFilter} pageNumber={pageNumber}  />
       </>
     );
   } catch (error) {

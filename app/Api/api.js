@@ -1,4 +1,5 @@
 export const fetchData = async (url) => {
+    console.log(url);
     const response = await fetch(url);
     if (!response.ok) {
         throw new Error(`There was an error when fetching data: ${response.status}`);
@@ -17,7 +18,10 @@ export const getMediaItems = async (id, fetchType, itemType) => {
         const trailer = data.results && data.results.find((v) => v.type === "Trailer") || data.results[0] || [];
         return trailer;
     } else {
-        return data.results;
+        if (itemType === "credits")
+            return data.cast
+        else
+            return data.results;
     }
 };
 

@@ -12,7 +12,7 @@ import NewRelease from "../MovieCards/NewRelease/NewRelease";
 const MediaDetailsContainer = ({
   movieInfo = [],
   videoInfo = [],
-  castList = [],
+  castList ,
   movieReviews = [],
   recommendedMovies = [],
   similarMovies = [],
@@ -34,7 +34,7 @@ const MediaDetailsContainer = ({
 
       <div className="w-full max-w-[1400px] flex flex-col items-center">
         <MoviesDetailSmallSections title={`${type} Cast List`} mt="5">
-          {castList.map((cast, i) => (
+          {castList && castList.map((cast, i) => (
             <PersonCard width="56" key={i} cast={cast} />
           ))}
         </MoviesDetailSmallSections>

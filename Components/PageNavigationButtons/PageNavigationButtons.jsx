@@ -3,6 +3,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 
 const PageNavigationButtons = ({ routeFilter, pageNumber, mediaType }) => {
+  
   const router = useRouter();
   const handlePageChange = (newPageNumber) => {
     if (newPageNumber <= 0) {
@@ -11,7 +12,7 @@ const PageNavigationButtons = ({ routeFilter, pageNumber, mediaType }) => {
     router.push(
       `/${mediaType}/${routeFilter.replaceAll("_", "-")}?page=${newPageNumber}`
     );
-    router.refresh();
+  
   };
 
   return (

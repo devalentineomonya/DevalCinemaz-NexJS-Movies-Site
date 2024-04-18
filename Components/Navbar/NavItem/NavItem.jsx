@@ -39,6 +39,7 @@ const NavItem = ({ searching, tab, isActive, lastItem }) => {
                   ? "user"
                   : tab.name.toLowerCase().replaceAll(" ", "-")
               }/${tab.id === 4 ? "" : menu.toLowerCase().replaceAll(" ", "-")}`}
+              prefetch
             >
               <div className="text-[14px] px-3 cursor-pointer dark:hover:bg-gray-800 hover:bg-gray-100 p-1 rounded ">
                 {" "}

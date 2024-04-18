@@ -37,7 +37,7 @@ export default async function Home() {
           nowPlayingMovies={nowPlayingMovies}
           seriesAiringToday={seriesAiringToday}
         />
-        <FooterBanner />
+        <FooterBanner bannerImage={trendingMoviesRes} />
         <Associates />
       </>
     );
