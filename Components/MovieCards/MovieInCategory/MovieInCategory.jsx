@@ -3,16 +3,16 @@ import Image from "next/image";
 import React, { useState } from "react";
 import fallbackImage from "@/assets/fallbackImage.svg";
 import Link from "next/link";
-const MovieInCategory = ({ seriesAiringTodayInfo, mediaType }) => {
+const MovieInCategory = ({ seriesAiringTodayInfo, mediaType, width=72 }) => {
   const [image, setImage] = useState(
     `https://image.tmdb.org/t/p/original${
-      (seriesAiringTodayInfo && seriesAiringTodayInfo.poster_path) ||
+      (seriesAiringTodayInfo && seriesAiringTodayInfo.poster_path !=null && seriesAiringTodayInfo.poster_path) ||
       fallbackImage
     }`
   );
 
   return (
-    <div className=" h-[420px] w-72 rounded-md overflow-hidden dark:bg-gray-950 bg-slate-200 flex flex-col flex-shrink-0">
+    <div className={` h-[420px] w-${width} rounded-md overflow-hidden dark:bg-gray-950 bg-slate-200 flex flex-col flex-shrink-0`}>
       <div className="h-[85%] relative">
         <Link
           href={`/${mediaType.toLowerCase()}/details/${
@@ -20,7 +20,7 @@ const MovieInCategory = ({ seriesAiringTodayInfo, mediaType }) => {
           }`}
         >
           <Image
-            src={image}
+            src={typeof(image) !== 'string' ? image.src : image} 
             className="absolute w-full h-full object-cover"
             alt={
               (seriesAiringTodayInfo && seriesAiringTodayInfo.original_title) ||

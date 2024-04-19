@@ -1,5 +1,4 @@
 import PersonCard from '@/Components/MovieCards/PersonCard/PersonCard'
-import React from 'react'
 import { getMediaPerCategory } from '../Api/api';
 import PageNavigationButtons from '@/Components/PageNavigationButtons/PageNavigationButtons';
 

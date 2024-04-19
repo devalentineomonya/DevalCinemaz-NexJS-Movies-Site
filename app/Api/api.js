@@ -1,5 +1,4 @@
 export const fetchData = async (url) => {
-    console.log(url);
     const response = await fetch(url);
     if (!response.ok) {
         throw new Error(`There was an error when fetching data: ${response.status}`);
@@ -12,13 +11,21 @@ export const getInfo = async (id, fetchType) => {
 };
 
 
+
+export const getSearchResult = async (query, resultType) => {
+    return fetchData(`${process.env.BASE_URL}/search/${resultType}?query=${query}&api_key=${process.env.API_KEY}`)
+    .then((data)=>data.results)
+};
+
+
+
 export const getMediaItems = async (id, fetchType, itemType) => {
     const data = await fetchData(`${process.env.BASE_URL}/${fetchType}/${id}/${itemType}?api_key=${process.env.API_KEY}`);
     if (itemType === "videos") {
         const trailer = data.results && data.results.find((v) => v.type === "Trailer") || data.results[0] || [];
         return trailer;
     } else {
-        if (itemType === "credits")
+        if (itemType === "credits" || itemType === "combined_credits")
             return data.cast
         else
             return data.results;
@@ -40,6 +47,7 @@ export const getMediaPerCategory = async (mediaType, fetchType, page = 1) => {
     const data = await fetchData(url);
     return data.results;
 };
+
 
 
 

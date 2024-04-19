@@ -1,16 +1,12 @@
-// NavItem.js
 import Link from "next/link";
 import React, { useRef } from "react";
 
 const NavItem = ({ searching, tab, isActive, lastItem }) => {
   const subMenuRef = useRef(null);
-
-  // No need for `setActiveTab` here (passed from Navbar)
-
   const handleSubMenuToggle = () => {
     if (!searching) {
-      // Only toggle if not searching
-      subMenuRef.current.classList.toggle("hidden"); // Toggle visibility directly
+
+      subMenuRef.current.classList.toggle("hidden");
     }
   };
 
@@ -28,7 +24,7 @@ const NavItem = ({ searching, tab, isActive, lastItem }) => {
         <div
           ref={subMenuRef}
           className={`absolute top-[30px] w-[172px] bg-customWhite dark:bg-customDark dark:text-customWhite text-customDark shadow-md rounded  pt-4 hidden ${
-            isActive && !searching ? "" : "hidden" // Show only if active and not searching
+            isActive && !searching ? "" : "hidden" 
           } `}
         >
           {tab.subMenu.map((menu, i) => (

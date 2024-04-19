@@ -2,7 +2,7 @@ import EpisodeSubNavbar from '@/Components/EpisodeSubNavbar/EpisodeSubNavbar'
 import EpisodeCard from '@/Components/MovieCards/EpisodeCard/EpisodeCard'
 import SeasonBanner from '@/Components/SeasonBanner/SeasonBanner'
 import SeriesNavbar from '@/Components/SeriesNavbar/SeriesNavbar'
-import React from 'react'
+
 
 const page = () => {
   return (

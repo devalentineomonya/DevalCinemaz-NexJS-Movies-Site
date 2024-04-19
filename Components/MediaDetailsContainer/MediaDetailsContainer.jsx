@@ -39,7 +39,7 @@ const MediaDetailsContainer = ({
           ))}
         </MoviesDetailSmallSections>
 
-        {movieReviews.length > 0 && ( // Check if movieReviews has items
+        {movieReviews.length > 0 && ( 
           <MoviesDetailSmallSections title="User reviews" mt="5">
             <AccordionItemContainer title={`${type} Review`} mt="5">
               {movieReviews.map((review, i) => (
@@ -49,7 +49,7 @@ const MediaDetailsContainer = ({
           </MoviesDetailSmallSections>
         )}
 
-        {recommendedMovies.length > 0 && ( // Check if recommendedMovies has items
+        {recommendedMovies.length > 0 && ( 
           <MoviesDetailSmallSections title={`Recommended ${type}`} mt="6">
             {recommendedMovies.map((recommendedMovie, i) => (
               <NewRelease
@@ -62,7 +62,7 @@ const MediaDetailsContainer = ({
           </MoviesDetailSmallSections>
         )}
 
-        {similarMovies.length > 0 && ( // Check if similarMovies has items
+        {similarMovies.length > 0 && ( 
           <MoviesDetailSmallSections title={`Similar ${type}`} mt="8">
             {similarMovies.map((similarMovie, i) => (
               <NewRelease

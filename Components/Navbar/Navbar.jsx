@@ -61,7 +61,7 @@ const Navbar = () => {
                 <NavItem
                   searching={searching}
                   tab={tab}
-                  isActive={activeTab === tab.id} // Pass `isActive` prop
+                  isActive={activeTab === tab.id} 
                   onMouseEnter={() => handleHover(tab.id)}
                   lastItem={tabs.length}
                 />

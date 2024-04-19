@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import React from 'react'
 import testImage from "@/assets/testImage.jpg";
 
 const GuestStart = () => {

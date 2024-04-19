@@ -6,7 +6,7 @@ import Link from "next/link";
 const PersonCard = ({ width, cast }) => {
 
   const [image, setImage] = useState(
-    `https://image.tmdb.org/t/p/original${cast.profile_path}`
+    `https://image.tmdb.org/t/p/original${cast.profile_path!=null && cast.profile_path}`
   );
   return (
     <div
@@ -15,7 +15,7 @@ const PersonCard = ({ width, cast }) => {
       <div className="h-[87%] relative rounded-md overflow-hidden">
       <Link href={`/people/details/${cast.id}`}>
         <Image
-          src={image}
+         src={typeof(image) !== 'string' ? image.src : image} 
           className="w-full h-full object-cover absolute"
           width={100}
           height={100}

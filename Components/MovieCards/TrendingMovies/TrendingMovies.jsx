@@ -9,8 +9,8 @@ const TrendingMovies = ({ mediaInfo, mediaType }) => {
 
   const [image, setImage] = useState(
     `https://image.tmdb.org/t/p/original${
-      (mediaInfo && mediaInfo.poster_path) || fallbackImage
-    }`
+      mediaInfo && mediaInfo.poster_path!=null && mediaInfo.poster_path
+    }` || fallbackImage
   );
 
   return (
@@ -21,9 +21,12 @@ const TrendingMovies = ({ mediaInfo, mediaType }) => {
     >
       <Link href={`/${mediaType}/details/${mediaInfo && mediaInfo.id}`}>
         <Image
-          src={image}
+          src={typeof image !== "string" ? image.src : image}
           className="absolute w-full h-full object-cover"
-          alt={mediaInfo && mediaInfo.original_title || mediaInfo && mediaInfo.name}
+          alt={
+            (mediaInfo && mediaInfo.original_title) ||
+            (mediaInfo && mediaInfo.name)
+          }
           onError={() => {
             setImage(fallbackImage);
           }}
@@ -36,7 +39,8 @@ const TrendingMovies = ({ mediaInfo, mediaType }) => {
           }`}
         >
           <p className="text-customWhite font-semibold font-Dosis text-2xl">
-            {mediaInfo && mediaInfo.original_title  || mediaInfo && mediaInfo.name}
+            {(mediaInfo && mediaInfo.original_title) ||
+              (mediaInfo && mediaInfo.name)}
           </p>
         </div>
       </Link>

@@ -2,11 +2,18 @@
 import Image from "next/image";
 import React from "react";
 import HeroTrendingButtons from "./HeroTrendingButtons/HeroTrendingButtons";
+import fallbackImage from "@/assets/fallbackImage.svg"
 const HeroTrending = ({ setVideoPlaying, action, sliderMovie }) => {
 
   const movieTitle = sliderMovie.original_title || sliderMovie.name;
   const firstWord = movieTitle.split(" ")[0];
   const remainingWords = movieTitle.substring(firstWord.length).trim();
+
+  function formatRuntime(minutes) {
+    const hours = Math.floor(minutes / 60);
+    const remainingMinutes = minutes % 60;
+    return `${hours}h ${remainingMinutes}Min`;
+  }
 
   const year = new Date(sliderMovie.release_date).getFullYear();
   return (
@@ -14,13 +21,13 @@ const HeroTrending = ({ setVideoPlaying, action, sliderMovie }) => {
       <div className="bg-gradient-to-r from-customDark via-gray-800 to-black h-full w-full absolute left-0 top-0 dark:opacity-[0.7] opacity-40"></div>
       <div className=" w-full h-full">
         <Image
-          src={`https://image.tmdb.org/t/p/original${sliderMovie.backdrop_path}`}
+          src={`https://image.tmdb.org/t/p/original${ sliderMovie.backdrop_path !=null && sliderMovie.backdrop_path}` || fallbackImage}
           className="w-full h-full object-cover"
           alt={sliderMovie.original_title || sliderMovie.name}
           width={100}
           height={100}
         />
-        {/* <img src={`https://image.tmdb.org/t/p/original${sliderMovie.backdrop_path}`} width={100} height={100} /> */}
+     
         <div className=" w-[40%] h-[70%] absolute bottom-20 left-40 z-20">
           <p className="text-2xl font-bold">
             <span className="text-customGreen">Span</span>
@@ -41,7 +48,7 @@ const HeroTrending = ({ setVideoPlaying, action, sliderMovie }) => {
               {year}
             </p>
             <p className="font-Inter text-2xl font-semibold text-customWhite">
-              1h 53Min
+              {sliderMovie.runtime && formatRuntime(sliderMovie.runtime)}
             </p>
             <div className="h-[40px] w-[50px] p-3 text-customWhite font-Inter font-semibold border-[1px] flex justify-center items-center rounded">
               4K
@@ -75,7 +82,7 @@ const HeroTrending = ({ setVideoPlaying, action, sliderMovie }) => {
             <Image
               className="w-full h-full object-cover"
               src={`https://image.tmdb.org/t/p/original${sliderMovie.poster_path}`}
-              // src={`${process.env.IMAGE_URL}${sliderMovie.poster_path}`} 
+          
               width={100}
               height={100}
               alt={sliderMovie.original_title || sliderMovie.name}

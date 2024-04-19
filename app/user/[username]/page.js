@@ -2,7 +2,7 @@
 import FavoritesCard from '@/Components/MovieCards/FavoritesCard/FavoritesCard'
 import SeriesNavbar from '@/Components/SeriesNavbar/SeriesNavbar'
 import UserProfileBanner from '@/Components/UserProfileBanner/UserProfileBanner'
-import React from 'react'
+
 
 const page = ({ params }) => {
 

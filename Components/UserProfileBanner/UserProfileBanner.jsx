@@ -12,7 +12,7 @@ const UserProfileBanner = () => {
     
   }, [theme, darkMode]);
 
-  // Update the banner image based on darkMode
+
   const bannerImage = darkMode ? profileBannerDark : profileBannerLight;
 
   return (
@@ -24,9 +24,6 @@ const UserProfileBanner = () => {
       />
       <div className="w-full max-w-[1400px]  h-56 z-30 flex items-center">
         <div className="flex flex-row gap-x-5 ">
-          {/* <div className="w-40 h-40 rounded-full overflow-hidden">
-            <Image src={testImage} className="h-full w-full" />
-          </div> */}
            <div className="w-40 h-40 rounded-full overflow-hidden bg-sky-600 flex items-center justify-center font-Dosis">
             <h1 className="font-bold uppercase flex justify-center items-center text-6xl text-white">M</h1>
           </div>

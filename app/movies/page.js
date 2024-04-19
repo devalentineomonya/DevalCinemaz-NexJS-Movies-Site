@@ -1,5 +1,4 @@
 import MediaContainer from '@/Components/MediaContainer/MediaContainer';
-import React from 'react';
 import { getMediaPerCategory } from '@/app/Api/api';
 const page = async ({searchParams }) => {
     const pageNumber = parseInt(searchParams.page) || 1;

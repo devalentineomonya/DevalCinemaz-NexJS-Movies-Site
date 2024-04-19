@@ -8,8 +8,8 @@ import Link from "next/link";
 const NewRelease = ({ width, movieInfo, type = "Movie" }) => {
   const [image, setImage] = useState(
     `https://image.tmdb.org/t/p/original${
-      (movieInfo && movieInfo.poster_path) || fallbackImage
-    }`
+      movieInfo && movieInfo.poster_path !=null &&  movieInfo.poster_path
+    }` || fallbackImage
   );
 
   return (
@@ -23,7 +23,7 @@ const NewRelease = ({ width, movieInfo, type = "Movie" }) => {
       >
         <div className="h-[80%] relative">
           <Image
-            src={image}
+            src={typeof image !== "string" ? image.src : image}
             className="absolute w-full h-full object-cover"
             onError={() => {
               setImage(fallbackImage);

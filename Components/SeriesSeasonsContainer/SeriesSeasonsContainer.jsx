@@ -1,4 +1,3 @@
-import React from 'react'
 import SeasonCard from '../MovieCards/SeasonCard/SeasonCard'
 
 const SeriesSeasonsContainer = ({seriesData, seriesId}) => {
