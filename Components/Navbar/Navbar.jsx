@@ -31,7 +31,7 @@ const Navbar = () => {
 
     {
       id: 3,
-      name: "My History",
+      name: "My Profile",
       subMenu: ["Favorites", "Play List", "Suggestions", "Continue Watching"],
     },
     {

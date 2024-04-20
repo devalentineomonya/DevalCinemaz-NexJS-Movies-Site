@@ -2,9 +2,8 @@
 import Image from "next/image";
 import React from "react";
 import HeroTrendingButtons from "./HeroTrendingButtons/HeroTrendingButtons";
-import fallbackImage from "@/assets/fallbackImage.svg"
+import fallbackImage from "@/assets/fallbackImage.svg";
 const HeroTrending = ({ setVideoPlaying, action, sliderMovie }) => {
-
   const movieTitle = sliderMovie.original_title || sliderMovie.name;
   const firstWord = movieTitle.split(" ")[0];
   const remainingWords = movieTitle.substring(firstWord.length).trim();
@@ -21,16 +20,20 @@ const HeroTrending = ({ setVideoPlaying, action, sliderMovie }) => {
       <div className="bg-gradient-to-r from-customDark via-gray-800 to-black h-full w-full absolute left-0 top-0 dark:opacity-[0.7] opacity-40"></div>
       <div className=" w-full h-full">
         <Image
-          src={`https://image.tmdb.org/t/p/original${ sliderMovie.backdrop_path !=null && sliderMovie.backdrop_path}` || fallbackImage}
+          src={
+            `https://image.tmdb.org/t/p/original${
+              sliderMovie.backdrop_path != null && sliderMovie.backdrop_path
+            }` || fallbackImage
+          }
           className="w-full h-full object-cover"
           alt={sliderMovie.original_title || sliderMovie.name}
           width={100}
           height={100}
         />
-     
+
         <div className=" w-[40%] h-[70%] absolute bottom-20 left-40 z-20">
           <p className="text-2xl font-bold">
-            <span className="text-customGreen">Span</span>
+            <span className="text-customGreen mr-3">TMDB</span>
             <span className="text-customWhite">Films</span>
           </p>
           <h1 className="font-extrabold text-6xl text-customWhite font-stencil m-0">
@@ -63,9 +66,13 @@ const HeroTrending = ({ setVideoPlaying, action, sliderMovie }) => {
           <p className="text-customWhite my-2">{sliderMovie.overview}</p>
           <div className="flex items-center mt-3">
             <ul className="flex justify-center flex-row  text-customWhite text-lg font-semibold pl-5">
-              {sliderMovie.genres && sliderMovie.genres.length > 0 && sliderMovie.genres.map((genre) => (
-                <li className="list-disc mr-10" key={genre.id}>{genre.name}</li>
-              ))}
+              {sliderMovie.genres &&
+                sliderMovie.genres.length > 0 &&
+                sliderMovie.genres.map((genre) => (
+                  <li className="list-disc mr-10" key={genre.id}>
+                    {genre.name}
+                  </li>
+                ))}
             </ul>
           </div>
           <div className="mt-3 flex flex-row ">
@@ -82,7 +89,6 @@ const HeroTrending = ({ setVideoPlaying, action, sliderMovie }) => {
             <Image
               className="w-full h-full object-cover"
               src={`https://image.tmdb.org/t/p/original${sliderMovie.poster_path}`}
-          
               width={100}
               height={100}
               alt={sliderMovie.original_title || sliderMovie.name}

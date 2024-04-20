@@ -1,11 +1,11 @@
 "use client"
 
-const error = () => {
+const Error = () => {
   return (
     <div>
-      An error occured in this appication
+      An Error occurred in this application
     </div>
   )
 }
 
-export default error
+export default Error

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import fallbackImage from "@/assets/fallbackImage.svg";
 import { BsArrowReturnLeft } from "react-icons/bs";
 import Image from "next/image";
+import Link from "next/link";
 
 const SeasonBanner = ({seriesData}) => {
   const [image, setImage] = useState(`https://image.tmdb.org/t/p/original${seriesData && seriesData.poster_path!=null &&  seriesData.poster_path}` || fallbackImage);
@@ -16,7 +17,7 @@ const SeasonBanner = ({seriesData}) => {
         </div>
         <div className="w-full h-full ">
             <h1 className=" font-Arial text-4xl font-bold ">{seriesData.name}<span className="font-thin ">({new Date(seriesData.first_air_date).getFullYear()})</span></h1>
-            <button className="flex flex-row items-center gap-x-4 mt-3 font-Dosis text-xl font-semibold"><BsArrowReturnLeft/><span>Back to Main</span></button>
+            <Link href={`/series/details/${seriesData.id}`}><button className="flex flex-row items-center gap-x-4 mt-3 font-Dosis text-xl font-semibold"><BsArrowReturnLeft/><span>Back to Main</span></button></Link>
         </div>
       </div>
     </div>

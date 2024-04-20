@@ -96,7 +96,7 @@ const SearchContainer = ({ moviesResults, peopleResults, seriesResults, companyR
             </div>
             {resultTypes.map((resultType) => (
               <div
-                className="dark:hover:bg-slate-500 hover:bg-slate-200 peer-hover:bg-customWhite transition-all duration-200 ease-in-out flex justify-between py-2 cursor-pointer rounded-md"
+                className={`dark:hover:bg-slate-500 hover:bg-slate-200 peer-hover:bg-customWhite transition-all duration-200 ease-in-out flex justify-between py-2 cursor-pointer rounded-md ${activePage === resultType.name ? "dark:bg-slate-500 bg-slate-200" : null}`}
                 onClick={() => setActivePage(resultType.name)}
                 key={resultType.name}
               >

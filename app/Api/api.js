@@ -6,6 +6,8 @@ export const fetchData = async (url) => {
     return response.json();
 };
 
+
+
 export const getInfo = async (id, fetchType) => {
     return fetchData(`${process.env.BASE_URL}/${fetchType}/${id}?api_key=${process.env.API_KEY}`);
 };
@@ -49,6 +51,15 @@ export const getMediaPerCategory = async (mediaType, fetchType, page = 1) => {
 };
 
 
+
+export const getEpisodes = async (seriesId,seasonId) => {
+    return fetchData(`${process.env.BASE_URL}/tv/${seriesId}/season/${seasonId}?api_key=${process.env.API_KEY}`)
+    .then((data)=>data.episodes)
+};
+export const getEpisodeCredits = async (seriesId,seasonId, episodeId) => {
+    return fetchData(`${process.env.BASE_URL}/tv/${seriesId}/season/${seasonId}?api_key=${process.env.API_KEY}`)
+    .then((data)=>data.episodes)
+};
 
 
 export const fetchCountryName = async () => {

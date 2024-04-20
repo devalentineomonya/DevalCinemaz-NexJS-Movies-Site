@@ -1,11 +1,10 @@
 import Link from "next/link";
-import React, { useRef } from "react";
+import { useRef } from "react";
 
 const NavItem = ({ searching, tab, isActive, lastItem }) => {
   const subMenuRef = useRef(null);
   const handleSubMenuToggle = () => {
     if (!searching) {
-
       subMenuRef.current.classList.toggle("hidden");
     }
   };
@@ -24,7 +23,7 @@ const NavItem = ({ searching, tab, isActive, lastItem }) => {
         <div
           ref={subMenuRef}
           className={`absolute top-[30px] w-[172px] bg-customWhite dark:bg-customDark dark:text-customWhite text-customDark shadow-md rounded  pt-4 hidden ${
-            isActive && !searching ? "" : "hidden" 
+            isActive && !searching ? "" : "hidden"
           } `}
         >
           {tab.subMenu.map((menu, i) => (

@@ -1,4 +1,5 @@
 "use client";
+import ProgressBar from '@/Components/ProgressBar/ProgressBar';
 import useTheme from '@/hooks/useTheme';
 import { ScaleLoader } from 'react-spinners';
 
@@ -14,7 +15,7 @@ const Loading = () => {
 
   return (
     <div className={`pt-[68px] h-screen w-full ${color === "#000000" ? "bg-[#fff]" : "bg-[#000]"}`}>
-      <div className="w-full h-2 bg-red-700"></div>  
+      <ProgressBar/> 
       <div className="flex justify-center items-center h-screen w-full">
         <ScaleLoader
           color={color === "#000000" ? "#000000" : "#ffffff"}

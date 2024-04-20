@@ -1,4 +1,3 @@
-"use client"
 import MediaContainer from '@/Components/MediaContainer/MediaContainer';
 import { getMediaPerCategory } from '@/app/Api/api';
 import NotFound from '@/app/movies/not-found';
