@@ -33,7 +33,7 @@ const EpisodeCard = ({ episode }) => {
 
   return (
     <div
-      className={`mb-4 cursor-pointer w-full overflow-hidden rounded-md shadowDropCenter shadow-gray-400 dark:shadow-gray-400 dark:bg-[#1b1a1c] bg-customWhite transition-all ease-in-out duration-300`}
+      className={`mb-4 cursor-pointer w-full overflow-hidden rounded-md shadow-[2px_5px_28px_3px_rgba(204,204,204,0.65)] dark:shadow-[2px_5px_28px_-18px_rgba(204,204,204,0.65)]  shadow-[2px_5px_28px_-7px_rgba(204,204,204,0.65)]ray-400 dark:dark:shadow-[2px_5px_28px_-18px_rgba(204,204,204,0.65)]  shadow-[2px_5px_28px_-7px_rgba(204,204,204,0.65)]ray-400 dark:bg-[#1b1a1c] bg-customWhite transition-all ease-in-out duration-300`}
     >
       <div className="mb-0 border-b-[1px] dark:border-gray-500 px-1 ">
         <div

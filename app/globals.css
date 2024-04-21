@@ -55,10 +55,3 @@ input[type=range]::-webkit-slider-thumb {
     background: linear-gradient(45deg, rgba(144, 34, 195, 1) 0%, rgba(113, 163, 107, 1) 59%, rgba(91, 253, 45, 1) 100%);
     cursor: pointer;
 }
-
-@layer components {
-    .shadowDropCenter {
-        -webkit-animation: shadow-drop-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-        animation: shadow-drop-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    }
-}

@@ -10,7 +10,7 @@ const PersonCard = ({ width, cast }) => {
   );
   return (
     <div
-      className={` h-96 flex flex-col shadowDropCenter flex-shrink-0 dark:bg-gray-950 bg-slate-200 w-${width}`}
+      className={` h-96 flex flex-col shadow-[2px_5px_28px_3px_rgba(204,204,204,0.65)] flex-shrink-0 dark:bg-gray-950 bg-slate-200 w-${width}`}
     >
       <div className="h-[87%] relative rounded-md overflow-hidden">
       <Link href={`/people/details/${cast.id}`}>

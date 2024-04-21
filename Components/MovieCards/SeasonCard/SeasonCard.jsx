@@ -13,7 +13,7 @@ const SeasonCard = ({ season, number, seriesId }) => {
 
   return (
     <Link href={`/series/details/${seriesId}/seasons/${season.season_number}/episodes`}>
-      <div className="w-full border-b-[1px] pb-4 pt-2 mt-2  dark:border-gray-300 border-gray-500 h-48 flex justify-center text-customDark dark:text-customWhite cursor-pointer hover:scale-[1.02] transition-all ease-in-out duration-300">
+      <div className="w-full border-b-[1px] pb-4 pt-2 mt-2 mb-4 hover:dark:shadow-[2px_5px_28px_-18px_rgba(204,204,204,0.65)]  shadow-[2px_5px_28px_-7px_rgba(204,204,204,0.65)] dark:border-gray-300 border-gray-500 h-48 flex justify-center text-customDark dark:text-customWhite cursor-pointer hover:scale-[1.02] transition-all ease-in-out duration-300">
         <div className="w-full max-w-[1400px] flex justify-center items-center h-full gap-x-4">
           <div className=" w-28 h-full rounded-md overflow-hidden">
             <Image

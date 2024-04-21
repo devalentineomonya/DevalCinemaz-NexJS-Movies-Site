@@ -13,7 +13,7 @@ const AccordionItemContainer = ({ children, title, mt, px }) => {
     }
   };
   return (
-    <div className={`overflow-hidden rounded-md shadowDropCenter shadow-gray-400 dark:shadow-gray-400 dark:bg-[#1b1a1c] bg-customWhite transition-all ease-in-out duration-300 ${mt}`}>
+    <div className={`overflow-hidden rounded-md shadow-[2px_5px_28px_3px_rgba(204,204,204,0.65)] shadow-gray-400 dark:shadow-gray-400 dark:bg-[#1b1a1c] bg-customWhite transition-all ease-in-out duration-300 ${mt}`}>
       <h2
         className="mb-0 border-b-[1px] dark:border-gray-500 px-1 "
         id="headingOne"

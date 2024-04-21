@@ -26,7 +26,7 @@ const ReviewCard = ({ review }) => {
   const formattedDate = `${weekday} ${addSuffixToDay(dayOfMonth)} ${year}`;
   return (
     <Link href={`${review.url}`}>
-      <div className="mt-7  rounded-md shadowDropCenter dark:shadow-slate-500 px-4 py-3 w-full h-56 dark:text-customWhite text-customDark">
+      <div className="mt-7  rounded-md shadow-[2px_5px_28px_3px_rgba(204,204,204,0.65)] dark:shadow-slate-500 px-4 py-3 w-full h-56 dark:text-customWhite text-customDark">
         <div className="grid grid-cols-12 h-20 gap-x-2 items-center">
           <div className="grid col-span-1  rounded-full overflow-hidden w-[60px]  h-[60px] bg-sky-600 text-customWhite uppercase justify-center items-center text-2xl">
             {review.author.slice(0, 2)}

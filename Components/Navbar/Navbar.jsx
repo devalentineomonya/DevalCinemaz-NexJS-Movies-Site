@@ -42,7 +42,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="w-full h-16 bg-transparent backdrop-blur-3xl fixed top-0 flex justify-center items-center z-50 shadow-2xl  dark:text-customWhite text-customDark   ">
+    <header className="w-full h-16 bg-transparent backdrop-blur-3xl fixed top-0 flex justify-center items-center z-50 dark:shadow-[2px_5px_28px_-18px_rgba(204,204,204,0.65)]  shadow-[2px_5px_28px_-7px_rgba(204,204,204,0.65)]xl  dark:text-customWhite text-customDark   ">
       <div className="w-full max-w-[1400px]  flex justify-between items-center">
         <div className="w-fit">
           <Link href="/">
