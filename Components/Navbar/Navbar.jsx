@@ -61,7 +61,7 @@ const Navbar = () => {
                 <NavItem
                   searching={searching}
                   tab={tab}
-                  isActive={activeTab === tab.id} 
+                  isActive={activeTab === tab.id}
                   onMouseEnter={() => handleHover(tab.id)}
                   lastItem={tabs.length}
                 />
@@ -83,8 +83,14 @@ const Navbar = () => {
           >
             <IoSearchOutline size={18} />
           </div>
+
           <div className=" mr-5 cursor-pointer hover:text-customOrange-300 transition-all ease-in-out duration-300">
-            <RiUserAddLine size={18} />
+            {/* <div className="w-[20px] h-[20px] rounded-full bg-blue-600 text-customWhite flex justify-center items-center p-[8px] text-md font-Dosis font-semibold ">W</div> */}
+            {
+              <Link href="/auth">
+                <RiUserAddLine size={18} />
+              </Link>
+            }
           </div>
           <div className=" mr-5 cursor-pointer hover:text-customOrange-300 transition-all ease-in-out duration-300">
             <GoBell size={18} />

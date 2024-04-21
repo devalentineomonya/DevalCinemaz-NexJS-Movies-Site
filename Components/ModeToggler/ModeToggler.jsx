@@ -30,7 +30,7 @@ const ModeToggler = () => {
         />
       )}
       {isOpen && (
-        <div className="bg-customWhite dark:bg-customDark border-customDark mr-5 cursor-pointer hover:text-customOrange-300 absolute right-[-20px] top-[30px] w-[130px] h-[80px] rounded shadow-md px-2 py-2">
+        <div className="bg-customWhite dark:bg-customDark border-customDark mr-5 cursor-pointer hover:text-customOrange-300 absolute right-[-20px] top-[30px] w-[130px] h-[80px] rounded shadowDropCenter px-2 py-2">
           <ul className="flex flex-col justify-center items-start gap-y-2">
             <li
              onClick={() => {

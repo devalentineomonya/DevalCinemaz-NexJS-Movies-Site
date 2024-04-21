@@ -15,8 +15,8 @@ const RegistrationForm = () => {
           <label htmlFor="">Agree terms and conditions</label>
         </div>
       </div>
-      <div className="flex justify-center mt-2">
-        <button className="w-full py-2 bg-blue-900 rounded-md mt-2 text-customWhite ">
+      <div className="flex justify-center mt-2 pb-4">
+        <button className="w-full py-2 bg-blue-900 rounded-md mt-2 text-customWhite mb-4">
           Register
         </button>
       </div>

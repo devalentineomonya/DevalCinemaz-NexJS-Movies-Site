@@ -7,7 +7,7 @@ import fallbackImage from "@/assets/fallbackImage.svg"
 import { RiStarFill } from "react-icons/ri";
 import GuestStart from "@/Components/GuestStart/GuestStart";
 const EpisodeCard = ({ episode }) => {
-  const [activeElement, setActiveElement] = useState("");
+  const [active, setActive] = useState("");
   const [image, setImage] = useState(
     `https://image.tmdb.org/t/p/original${
       episode &&
@@ -18,10 +18,10 @@ const EpisodeCard = ({ episode }) => {
   );
 
   const handleClick = (value) => {
-    if (value === activeElement) {
-      setActiveElement("");
+    if (value === active) {
+      setActive("");
     } else {
-      setActiveElement(value);
+      setActive(value);
     }
   };
 
@@ -33,7 +33,7 @@ const EpisodeCard = ({ episode }) => {
 
   return (
     <div
-      className={`mb-4 cursor-pointer w-full overflow-hidden rounded-md shadow-sm shadow-gray-400 dark:shadow-gray-400 dark:bg-[#1b1a1c] bg-customWhite transition-all ease-in-out duration-300`}
+      className={`mb-4 cursor-pointer w-full overflow-hidden rounded-md shadowDropCenter shadow-gray-400 dark:shadow-gray-400 dark:bg-[#1b1a1c] bg-customWhite transition-all ease-in-out duration-300`}
     >
       <div className="mb-0 border-b-[1px] dark:border-gray-500 px-1 ">
         <div
@@ -82,7 +82,7 @@ const EpisodeCard = ({ episode }) => {
           <div className="w-[60px] flex justify-center items-center">
             <BsChevronDown
               className={`${
-                activeElement === episode.id
+                active === episode.id
                   ? `rotate-[-180deg] -mr-1`
                   : `rotate-0 fill-[#212529]  dark:fill-white`
               } ml-auto h-5 w-5 shrink-0 fill-[#336dec] transition-transform duration-300 ease-in-out motion-reduce:transition-none dark:fill-blue-300 `}
@@ -91,7 +91,7 @@ const EpisodeCard = ({ episode }) => {
         </div>
       </div>
       <TECollapse
-        show={activeElement === episode.id}
+        show={active === episode.id}
         className={`!mt-0 !rounded-b-none !shadow-none transition-all ease-in-out duration-300 pb-2 `}
       >
         <div className="flex flex-col justify-center items-center">

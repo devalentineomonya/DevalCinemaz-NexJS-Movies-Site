@@ -22,7 +22,7 @@ const NavItem = ({ searching, tab, isActive, lastItem }) => {
       {tab.subMenu.length > 0 && (
         <div
           ref={subMenuRef}
-          className={`absolute top-[30px] w-[172px] bg-customWhite dark:bg-customDark dark:text-customWhite text-customDark shadow-md rounded  pt-4 hidden ${
+          className={`absolute top-[30px] w-[172px] bg-customWhite dark:bg-customDark dark:text-customWhite text-customDark shadowDropCenter rounded  pt-4 hidden ${
             isActive && !searching ? "" : "hidden"
           } `}
         >

@@ -27,7 +27,9 @@ module.exports = {
         },
         customWhite: "#feffff",
       },
-    },
-    plugins: [],
+   
+plugins: [],
   }
 }
+}
+

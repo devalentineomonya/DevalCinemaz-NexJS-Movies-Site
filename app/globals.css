@@ -8,49 +8,57 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
     font-family: "Inter", "Dosis";
 }
 
-::-webkit-scrollbar { 
-    width: 8px; 
+::-webkit-scrollbar {
+    width: 8px;
     height: 8px;
-} 
+}
 
-::-webkit-scrollbar-track { 
-    background:transparent; 
+::-webkit-scrollbar-track {
+    background: transparent;
     display: none;
-} 
+}
 
-::-webkit-scrollbar-thumb { 
-    background:linear-gradient(45deg, #ff00c8 0%, rgba(253,29,29,1) 50%, #00c8ff 100%);
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #ff00c8 0%, rgba(253, 29, 29, 1) 50%, #00c8ff 100%);
     border-radius: 50px;
- 
-} 
 
-::-webkit-scrollbar-thumb:hover { 
-    background: linear-gradient(45deg, rgba(144,34,195,1) 0%, rgba(113,163,107,1) 59%, rgba(91,253,45,1) 100%);
-} 
+}
 
-::-webkit-scrollbar-button { 
-    display: none; 
-} 
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, rgba(144, 34, 195, 1) 0%, rgba(113, 163, 107, 1) 59%, rgba(91, 253, 45, 1) 100%);
+}
 
-input[type=range]{
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+input[type=range] {
     -webkit-appearance: none;
-    width:100%;
+    width: 100%;
     height: 8px;
     border-radius: 5px;
-    background:linear-gradient(45deg, #ff00c8 0%, rgba(253,29,29,1) 50%, #00c8ff 100%);
+    background: linear-gradient(45deg, #ff00c8 0%, rgba(253, 29, 29, 1) 50%, #00c8ff 100%);
     outline: none;
     margin: 10px 0;
 }
-input[type=range]::-webkit-slider-thumb{
+
+input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background:linear-gradient(45deg, rgba(144,34,195,1) 0%, rgba(113,163,107,1) 59%, rgba(91,253,45,1) 100%);
-    cursor:pointer;
+    background: linear-gradient(45deg, rgba(144, 34, 195, 1) 0%, rgba(113, 163, 107, 1) 59%, rgba(91, 253, 45, 1) 100%);
+    cursor: pointer;
+}
+
+@layer components {
+    .shadowDropCenter {
+        -webkit-animation: shadow-drop-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: shadow-drop-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
 }

@@ -15,8 +15,8 @@ const LoginFrom = () => {
         </div>
         <span className="italic underline text-blue-700 cursor-pointer">Forgot password</span>
       </div>
-      <div className="flex justify-center mt-2">
-        <button className="w-full py-2 bg-blue-900 rounded-md mt-2 text-customWhite ">
+      <div className="flex justify-center mt-2 pb-4">
+        <button className="w-full py-2 bg-blue-900 rounded-md mt-2  text-customWhite ">
           Login
         </button>
       </div>
