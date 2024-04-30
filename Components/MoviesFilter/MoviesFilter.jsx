@@ -94,7 +94,7 @@ const MoviesFilter = () => {
                 htmlFor=""
                 className="dark:text-customWhite text-customDark"
               >
-                What i have't watch
+                What i have&#39;t watch
               </label>
             </div>
             <div className="mb-1">
