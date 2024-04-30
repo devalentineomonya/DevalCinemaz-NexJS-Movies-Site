@@ -14,7 +14,7 @@ const page = () => {
     return (
         <div className='dark:bg-customDark bg-customWhite pt-[65px] h-screen relative'>
             <div className='absolute w-full h-full top-0 bottom-0 bg-black bg-opacity-50'></div>
-            <Image src={testImage} className='h-full w-full ' />
+            <Image src={testImage} className='h-full w-full '  alt="testImage" height={100} width={100}/>
             <div className='w-full h-full flex justify-center items-center absolute top-0 pt-[65px]'>
                 <div className="w-[400px] h-fit bg-customWhite rounded-lg relative pt-7 pb-8 px-5 flex items-center justify-center">
                     <Link href="/"><button className='absolute top-0 right-0 transform rotate-45'><BsPlus size={45} /></button></Link>
