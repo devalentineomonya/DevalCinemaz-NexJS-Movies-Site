@@ -6,6 +6,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  purge: [ "./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}", ],
   darkMode: 'class',
   theme: {
     extend: {
@@ -27,9 +28,10 @@ module.exports = {
         },
         customWhite: "#feffff",
       },
-   
-plugins: [],
-  }
-}
+
+      plugins: [],
+    }
+  },
+  enabled: process.env.NODE_ENV === "production",
 }
 
