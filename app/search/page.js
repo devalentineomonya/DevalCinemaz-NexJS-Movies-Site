@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic'
 import { getSearchResult } from '../Api/api'
 import SearchContainer from '@/Components/SearchContainer/SearchContainer'
 
