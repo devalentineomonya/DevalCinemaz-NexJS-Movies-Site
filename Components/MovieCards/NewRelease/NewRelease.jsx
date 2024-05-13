@@ -28,8 +28,7 @@ const NewRelease = ({ width, movieInfo, type = "Movie" }) => {
             onError={() => {
               setImage(fallbackImage);
             }}
-            width={100}
-            height={100}
+          
             alt={
               (movieInfo && movieInfo.original_title) ||
               (movieInfo && movieInfo.name) ||

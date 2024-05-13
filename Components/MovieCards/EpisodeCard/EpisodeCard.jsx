@@ -49,8 +49,7 @@ const EpisodeCard = ({ episode }) => {
                 src={image}
                 className="w-full h-full"
                 alt={`${episode && episode.name}` || "Name not found"}
-                width={100}
-                height={100}
+              
                 onError={() => setImage(fallbackImage)}
               />
             </div>

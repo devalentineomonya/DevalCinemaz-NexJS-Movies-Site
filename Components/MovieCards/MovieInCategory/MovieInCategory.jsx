@@ -27,8 +27,7 @@ const MovieInCategory = ({ seriesAiringTodayInfo, mediaType, width=72 }) => {
               (seriesAiringTodayInfo && seriesAiringTodayInfo.name)
             }
             onError={() => setImage(fallbackImage)}
-            width={100}
-            height={100}
+          
           />
         </Link>
       </div>

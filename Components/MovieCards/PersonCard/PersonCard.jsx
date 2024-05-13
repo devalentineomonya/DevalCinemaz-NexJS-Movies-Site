@@ -17,8 +17,7 @@ const PersonCard = ({ width, cast }) => {
         <Image
          src={typeof(image) !== 'string' ? image.src : image} 
           className="w-full h-full object-cover absolute"
-          width={100}
-          height={100}
+         
           onError={() => {
             setImage(fallbackImage);
           }}

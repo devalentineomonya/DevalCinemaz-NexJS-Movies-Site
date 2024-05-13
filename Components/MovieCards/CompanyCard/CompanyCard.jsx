@@ -25,8 +25,7 @@ const CompanyCard = ({ mediaInfo }) => {
         onError={() => {
           setImage(fallbackImage);
         }}
-        width={100}
-        height={100}
+       
       />
       <div
         className={`absolute bg-gradient-to-t from-gray-700 to-transparent w-full h-1/2 flex justify-start items-end pl-4 pb-6 cursor-pointer  transition-all ease-in-out duration-300  ${

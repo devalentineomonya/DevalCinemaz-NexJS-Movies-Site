@@ -18,8 +18,7 @@ const ComingSoon = ({ upcomingMovie }) => {
         <Image
           src={typeof(image) !== 'string' ? image.src : image} 
           className="relative w-full h-full object-cover"
-          width={100}
-          height={100}
+     
           alt={upcomingMovie.original_title}
           onError={() => {
             setImage(fallbackImage);
