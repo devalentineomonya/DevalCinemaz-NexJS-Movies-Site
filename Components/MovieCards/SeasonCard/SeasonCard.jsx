@@ -19,8 +19,7 @@ const SeasonCard = ({ season, number, seriesId }) => {
             <Image
               src={typeof image !== "string" ? image.src : image}
               className="h-full w-full"
-              width={100}
-              height={100}
+             
               alt={season.name}
               onError={() => {
                 setImage(fallbackImage);
