@@ -21,8 +21,7 @@ const GuestStart = ({ guestStar }) => {
           <Image
             src={image}
             className="h-full w-full"
-            width={100}
-            height={100}
+    
             alt={guestStar.original_name || "Name not defined"}
             onError={()=>setImage(fallbackImage)}
           />

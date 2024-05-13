@@ -18,8 +18,7 @@ const FooterBanner = ({ bannerImage }) => {
       <Image
         src={typeof image !== "string" ? image.src : image}
         className="absolute object-center h-full w-full"
-        width={100}
-        height={100}
+    
         alt={bannerImage[randomIndex].title}
         onError={() => setImage(fallbackImage)}
       />

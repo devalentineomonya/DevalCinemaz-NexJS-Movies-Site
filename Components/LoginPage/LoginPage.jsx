@@ -16,8 +16,7 @@ const LoginPage = () => {
         src={testImage}
         className="h-full w-full "
         alt="testImage"
-        height={100}
-        width={100}
+  
       />
       <div className="w-full h-full flex justify-center items-center absolute top-0 pt-[65px]">
         <div className="w-[400px] h-fit bg-customWhite rounded-lg relative pt-7 pb-8 px-5 flex items-center justify-center">

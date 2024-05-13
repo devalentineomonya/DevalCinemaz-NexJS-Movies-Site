@@ -27,8 +27,7 @@ const HeroTrending = ({ setVideoPlaying, action, sliderMovie }) => {
           }
           className="w-full h-full object-cover"
           alt={sliderMovie.original_title || sliderMovie.name}
-          width={100}
-          height={100}
+        
         />
 
         <div className=" xl:w-[40%] w-[55%] h-[70%] absolute bottom-20 xl:left-40 left-10  z-20">
