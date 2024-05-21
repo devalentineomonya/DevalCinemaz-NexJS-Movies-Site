@@ -19,7 +19,7 @@ const MovieInCategory = ({ seriesAiringTodayInfo, mediaType, width=72 }) => {
             seriesAiringTodayInfo && seriesAiringTodayInfo.id
           }`}
         >
-              <Image  width={1}  height={1}{1}={0}
+              <Image  width={1}  height={1}
             src={typeof(image) !== 'string' ? image.src : image} 
             className="absolute w-full h-full object-cover"
             alt={
