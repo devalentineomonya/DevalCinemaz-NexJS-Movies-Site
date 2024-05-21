@@ -70,7 +70,7 @@ const page = async ({ params }) => {
                                 </ul>
                             </div>
                             <div className='relative  grid col-span-1 max-w-[300px] h-full'>
-                                    <Image  width={1}  height={1}{1}={0} src={imageName}  className='w-full h-full absolute' alt={personInfo && personInfo.name} />
+                                    <Image  width={1}  height={1} src={imageName}  className='w-full h-full absolute' alt={personInfo && personInfo.name} />
                             </div>
                         </div>
 
