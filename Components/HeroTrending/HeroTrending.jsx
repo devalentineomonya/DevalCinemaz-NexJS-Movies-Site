@@ -88,8 +88,7 @@ const HeroTrending = ({ setVideoPlaying, action, sliderMovie }) => {
                 <Image  width={1}  height={1}
               className="w-full h-full object-cover"
               src={`https://image.tmdb.org/t/p/original${sliderMovie.poster_path}`}
-              width={100}
-               height={1}{100}
+          
               alt={sliderMovie.original_title || sliderMovie.name}
               priority
             />
