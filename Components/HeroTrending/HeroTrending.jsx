@@ -19,7 +19,7 @@ const HeroTrending = ({ setVideoPlaying, action, sliderMovie }) => {
     <div className="w-full xl:h-[70vh] h-fit relative  cursor-default">
       <div className="bg-gradient-to-r from-customDark via-gray-800 to-black h-full w-full absolute left-0 top-0 dark:opacity-[0.7] opacity-40"></div>
       <div className=" w-full h-full">
-            <Image  width={1}  height={1}{1}={0}
+            <Image  width={1}  height={1}
           src={
             `https://image.tmdb.org/t/p/original${
               sliderMovie.backdrop_path != null && sliderMovie.backdrop_path
@@ -85,7 +85,7 @@ const HeroTrending = ({ setVideoPlaying, action, sliderMovie }) => {
         </div>
         {action === "play" ? (
           <div className="w-72 h-96 rounded-md z-20 absolute xl:right-20 right-10 bottom-20 overflow-hidden">
-                <Image  width={1}  height={1}{1}={0}
+                <Image  width={1}  height={1}
               className="w-full h-full object-cover"
               src={`https://image.tmdb.org/t/p/original${sliderMovie.poster_path}`}
               width={100}
