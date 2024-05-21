@@ -12,7 +12,7 @@ const LoginPage = () => {
   return (
     <>
       <div className="absolute w-full h-full top-0 bottom-0 bg-black bg-opacity-50"></div>
-          <Image  width={1}  height={1}{1}={0}
+          <Image  width={1}  height={1}
         src={testImage}
         className="h-full w-full "
         alt="testImage"
