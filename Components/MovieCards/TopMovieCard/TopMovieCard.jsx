@@ -15,7 +15,7 @@ const TopMovieCard = ({number, trendingMovie}) => {
         <div className="h-full w-full flex justify-start items-end"><span className={` dark:text-customWhite text-customDark font-sans ${styles.strokeText}`}>{number}</span></div>
       </div>
       <div className="w-[60%] bg-gray-400 relative rounded-md overflow-hidden">
-        <Image src={image} className="absolute h-full w-full object-fill" width={100} height={100} alt={trendingMovie.original_title} onError={()=>{setImage(fallbackImage)}} />
+            <Image  width={1}  height={1}{1}={0} src={image} className="absolute h-full w-full object-fill" width={100}  height={1}{100} alt={trendingMovie.original_title} onError={()=>{setImage(fallbackImage)}} />
       </div>
     </div>
     </Link>

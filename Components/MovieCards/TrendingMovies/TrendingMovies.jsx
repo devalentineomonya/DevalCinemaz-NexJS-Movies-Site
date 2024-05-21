@@ -20,9 +20,10 @@ const TrendingMovies = ({ mediaInfo, mediaType }) => {
       onMouseLeave={() => setMouseHover(false)}
     >
       <Link href={`/${mediaType}/details/${mediaInfo && mediaInfo.id}`}>
-        <Image
+            <Image  width={1}  height={1}
           src={typeof image !== "string" ? image.src : image}
           className="absolute w-full h-full object-cover"
+        
           alt={
             (mediaInfo && mediaInfo.original_title) ||
             (mediaInfo && mediaInfo.name)

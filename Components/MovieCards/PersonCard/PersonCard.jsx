@@ -14,7 +14,7 @@ const PersonCard = ({ width, cast }) => {
     >
       <div className="h-[87%] relative rounded-md overflow-hidden">
       <Link href={`/people/details/${cast.id}`}>
-        <Image
+            <Image  width={1}  height={1}{1}={0}
          src={typeof(image) !== 'string' ? image.src : image} 
           className="w-full h-full object-cover absolute"
          

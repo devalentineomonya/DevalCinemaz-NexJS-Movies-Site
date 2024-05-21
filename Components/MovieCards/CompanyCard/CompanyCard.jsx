@@ -18,7 +18,7 @@ const CompanyCard = ({ mediaInfo }) => {
       onMouseEnter={() => setMouseHover(true)}
       onMouseLeave={() => setMouseHover(false)}
     >
-      <Image
+          <Image  width={1}  height={1}{1}={0}
         src={typeof image !== "string" ? image.src : image}
         className="absolute w-full h-full object-cover"
         alt={mediaInfo && mediaInfo.name}
