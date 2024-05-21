@@ -45,7 +45,7 @@ const EpisodeCard = ({ episode }) => {
         >
           <div className="flex flex-row gap-x-4">
             <div className="w-[180px]  rounded-md overflow-hidden">
-                  <Image  width={1}  height={1}{1}={0}
+                  <Image  width={1}  height={1}
                 src={image}
                 className="w-full h-full"
                 alt={`${episode && episode.name}` || "Name not found"}
