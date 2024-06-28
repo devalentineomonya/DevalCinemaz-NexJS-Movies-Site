@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const ComingSoon = ({ upcomingMovie }) => {
   const [image, setImage] = useState(
-    upcomingMovie && upcomingMovie.backdrop_path && upcomingMovie.backdrop_path !=null
+    upcomingMovie?.backdrop_path !=null
       ? `https://image.tmdb.org/t/p/original${upcomingMovie.backdrop_path}`
       : fallbackImage
   );

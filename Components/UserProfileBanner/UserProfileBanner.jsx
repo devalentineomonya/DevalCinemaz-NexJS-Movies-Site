@@ -7,7 +7,7 @@ import Image from "next/image";
 import useTheme from "@/hooks/useTheme";
 
 const UserProfileBanner = () => {
-  const [theme, setTheme, darkMode, setDarkMode] = useTheme();
+  const [theme, darkMode] = useTheme();
   useEffect(() => {
     
   }, [theme, darkMode]);

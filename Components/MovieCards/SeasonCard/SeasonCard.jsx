@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const SeasonCard = ({ season, number, seriesId }) => {
   const [image, setImage] = useState(
-    `https://image.tmdb.org/t/p/original${season && season.poster_path !=null && season.poster_path}` ||
+    `https://image.tmdb.org/t/p/original${season?.poster_path !=null && season.poster_path}` ||
       fallbackImage
   );
 

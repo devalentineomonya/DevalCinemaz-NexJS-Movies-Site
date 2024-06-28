@@ -7,9 +7,8 @@ import Link from "next/link";
 const GuestStart = ({ guestStar }) => {
   const [image, setImage] = useState(
     `https://image.tmdb.org/t/p/original${
-      guestStar &&
-      guestStar.profile_path &&
-      guestStar.profile_path != null &&
+      
+      guestStar?.profile_path != null &&
       guestStar.profile_path
     }` || fallbackImage
   );

@@ -6,7 +6,7 @@ import Link from "next/link";
 import fallbackImage from "@/assets/fallbackImage.svg";
 
 const TopMovieCard = ({number, trendingMovie}) => {
-  const [image, setImage] = useState(`https://image.tmdb.org/t/p/original${ trendingMovie && trendingMovie.backdrop_path!=null && trendingMovie.backdrop_path }` || fallbackImage)
+  const [image, setImage] = useState(`https://image.tmdb.org/t/p/original${ trendingMovie?.backdrop_path!=null && trendingMovie.backdrop_path }` || fallbackImage)
   return (
     <Link  href={`/movies/details/${trendingMovie.id}`}>
     

@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const SeasonBanner = ({seriesData}) => {
-  const [image, setImage] = useState(`https://image.tmdb.org/t/p/original${seriesData && seriesData.poster_path!=null &&  seriesData.poster_path}` || fallbackImage);
+  const [image, setImage] = useState(`https://image.tmdb.org/t/p/original${seriesData?.poster_path!=null &&  seriesData.poster_path}` || fallbackImage);
 
   return (
     

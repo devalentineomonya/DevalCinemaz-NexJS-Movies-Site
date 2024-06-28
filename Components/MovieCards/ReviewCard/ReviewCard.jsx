@@ -41,7 +41,7 @@ const ReviewCard = ({ review }) => {
                 <GoStarFill /> {review.author_details.rating * 10}%
               </div>
               <p className="pl-3 font-thin text-sm">
-                Written by <span className="font-bold">{review.author}</span> on{" "}
+                Written by <span className="font-bold">{review.author}</span> on
                 {formattedDate}
               </p>
             </div>

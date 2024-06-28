@@ -19,8 +19,7 @@ const MediaContainer = ({ mediaList, routeFilter, pageNumber, mediaType}) => {
           </div>
 
           <div className="w-full grid xl:grid-cols-5 lg:grid-cols-4  md:grid-cols-3 sm:grid-cols-2 sm:justify-around gap-x-3  gap-y-6  flex-wrap text-customDark dark:text-customWhite">
-            {mediaList &&
-              mediaList.map((movieInfo, i) => (
+            {mediaList?.map((movieInfo, i) => (
                 <NewRelease key={i} movieInfo={movieInfo} width="full" type={mediaType} />
               ))}
           </div>

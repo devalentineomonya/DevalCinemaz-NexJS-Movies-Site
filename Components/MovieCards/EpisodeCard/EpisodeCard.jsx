@@ -10,9 +10,8 @@ const EpisodeCard = ({ episode }) => {
   const [active, setActive] = useState("");
   const [image, setImage] = useState(
     `https://image.tmdb.org/t/p/original${
-      episode &&
-      episode.still_path &&
-      episode.still_path != null &&
+      
+      episode?.still_path != null &&
       episode.still_path
     }` || fallbackImage
   );
@@ -48,7 +47,7 @@ const EpisodeCard = ({ episode }) => {
                   <Image  width={1}  height={1}
                 src={image}
                 className="w-full h-full"
-                alt={`${episode && episode.name}` || "Name not found"}
+                alt={`${episode?.name}` || "Name not found"}
               
                 onError={() => setImage(fallbackImage)}
               />
@@ -74,7 +73,7 @@ const EpisodeCard = ({ episode }) => {
                 </p>
               </div>
               <p className="text-md font-Dosis mt-3 ">
-                {episode && episode.overview}
+                {episode?.overview}
               </p>
             </div>
           </div>
@@ -97,8 +96,7 @@ const EpisodeCard = ({ episode }) => {
           <p className="w-3/4 my-3 text-customDark dark:text-customWhite font-Dosis font-semibold text-3xl">Guest Starts</p>
           <div className="flex justify-center w-full">
             <div className="w-3/4 flex flex-row items-start justify-start flex-wrap gap-x-4 gap-y-6">
-              {episode &&
-                episode.guest_stars.length > 0 &&
+              {episode?.guest_stars.length > 0 &&
                 episode.guest_stars.map((guestStar, i) => <GuestStart guestStar={guestStar} key={i}/>)}
             </div>
           </div>

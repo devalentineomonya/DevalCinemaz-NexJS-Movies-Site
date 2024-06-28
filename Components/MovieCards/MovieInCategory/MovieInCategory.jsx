@@ -6,7 +6,7 @@ import Link from "next/link";
 const MovieInCategory = ({ seriesAiringTodayInfo, mediaType, width=72 }) => {
   const [image, setImage] = useState(
     `https://image.tmdb.org/t/p/original${
-      (seriesAiringTodayInfo && seriesAiringTodayInfo.poster_path !=null && seriesAiringTodayInfo.poster_path) ||
+      (seriesAiringTodayInfo?.poster_path !=null && seriesAiringTodayInfo.poster_path) ||
       fallbackImage
     }`
   );
@@ -16,15 +16,15 @@ const MovieInCategory = ({ seriesAiringTodayInfo, mediaType, width=72 }) => {
       <div className="h-[85%] relative">
         <Link
           href={`/${mediaType.toLowerCase()}/details/${
-            seriesAiringTodayInfo && seriesAiringTodayInfo.id
+            seriesAiringTodayInfo?.id
           }`}
         >
               <Image  width={1}  height={1}
             src={typeof(image) !== 'string' ? image.src : image} 
             className="absolute w-full h-full object-cover"
             alt={
-              (seriesAiringTodayInfo && seriesAiringTodayInfo.original_title) ||
-              (seriesAiringTodayInfo && seriesAiringTodayInfo.name)
+              (seriesAiringTodayInfo?.original_title) ||
+              (seriesAiringTodayInfo?.name)
             }
             onError={() => setImage(fallbackImage)}
           
@@ -33,13 +33,13 @@ const MovieInCategory = ({ seriesAiringTodayInfo, mediaType, width=72 }) => {
       </div>
       <Link
         href={`/${mediaType.toLowerCase()}/details/${
-          seriesAiringTodayInfo && seriesAiringTodayInfo.id
+          seriesAiringTodayInfo?.id
         }`}
       >
         <div className="flex justify-center items-center flex-col cursor-pointer">
           <p className="dark:text-customWhite text-customDark font-Inter font-semibold text-md mt-2">
-            {(seriesAiringTodayInfo && seriesAiringTodayInfo.original_title) ||
-              (seriesAiringTodayInfo && seriesAiringTodayInfo.name)}
+            {(seriesAiringTodayInfo?.original_title) ||
+              (seriesAiringTodayInfo?.name)}
           </p>
           <p className="dark:text-customWhite text-customDark font-Inter font-semibold text-md mt-2 capitalize">
             {`${mediaType} ${

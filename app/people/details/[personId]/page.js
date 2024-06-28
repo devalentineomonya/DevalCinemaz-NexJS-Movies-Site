@@ -31,17 +31,17 @@ const page = async ({ params }) => {
                                     <Image  width={1}  height={1} src={imageName}  className='w-full h-full absolute' alt={personInfo.name} />
                             </div>
                             <div className='my-10'>
-                                <Link href={`${personInfo && personInfo.homepage || "https://www.google.com/search?q=" + personInfo.name.replaceAll(" ", "+")}`} target='_blank' className='flex justify-start items-center gap-x-2'>Personal Website<LuExternalLink /></Link>
+                                <Link href={`${personInfo?.homepage || "https://www.google.com/search?q=" + personInfo.name.replaceAll(" ", "+")}`} target='_blank' className='flex justify-start items-center gap-x-2'>Personal Website<LuExternalLink /></Link>
                             </div>
                         </div>
                         <div className='w-full h-fit grid col-span-3 '>
-                            <h1 className='font-semibold font-Inter text-2xl mt-5 mb-6'>{personInfo && personInfo.name}</h1>
+                            <h1 className='font-semibold font-Inter text-2xl mt-5 mb-6'>{personInfo?.name}</h1>
                             <p className='text-md font-Dosis font-thin'>{ }</p>
                             <div className='W-full l w-full max-w-[1400px] overflow-hidden px-[2px]'>
                                 <h3 className='font-bold text-xl font-Inter my-3'>Know For</h3>
                                 <div className="flex gap-x-4 justify-start items-center overflow-x-scroll">
                                     {
-                                        creditInfo && creditInfo.map((singleCredit, i) => (
+                                        creditInfo?.map((singleCredit, i) => (
                                             <NewRelease key={i} movieInfo={singleCredit} width="64" />
                                         ))
                                     }
@@ -54,23 +54,23 @@ const page = async ({ params }) => {
                             <div className='grid col-span-1 h-full py-3'>
                                 <ul className='flex flex-wrap flex-col'>
                                     <li className='my-2 text-xl font-Inter font-bold '>Also Known As:</li>
-                                    {personInfo && personInfo.also_known_as.map((alias, index) => (
+                                    {personInfo?.also_known_as.map((alias, index) => (
                                         <li className="list-disc font-Dosis italic font-semibold text-md" key={index}>{alias}</li>
                                     ))}
                                 </ul>
                             </div>
                             <div className='grid col-span-1 py-3'>
                                 <ul className=" flex gap-y-3 flex-col">
-                                    <li>Birthday: {personInfo && personInfo.birthday}</li>
-                                    <li>Gender: {personInfo && personInfo.gender === 1 ? 'Female' : 'Male'}</li>
-                                    <li className="text-xl italic font-Dosis font-thin ">Homepage:  <Link href={`${personInfo && personInfo.homepage || "https://www.google.com/search?q=" + personInfo.name.replaceAll(" ", "+")}`} target='_blank' className='flex justify-start items-center gap-x-2'>Personal Website<LuExternalLink /></Link>
+                                    <li>Birthday: {personInfo?.birthday}</li>
+                                    <li>Gender: {personInfo?.gender === 1 ? 'Female' : 'Male'}</li>
+                                    <li className="text-xl italic font-Dosis font-thin ">Homepage:  <Link href={`${personInfo?.homepage || "https://www.google.com/search?q=" + personInfo.name.replaceAll(" ", "+")}`} target='_blank' className='flex justify-start items-center gap-x-2'>Personal Website<LuExternalLink /></Link>
                                     </li>
-                                    <li>Place of Birth: {personInfo && personInfo.place_of_birth}</li>
-                                    <li>Popularity: {personInfo && personInfo.popularity}</li>
+                                    <li>Place of Birth: {personInfo?.place_of_birth}</li>
+                                    <li>Popularity: {personInfo?.popularity}</li>
                                 </ul>
                             </div>
                             <div className='relative  grid col-span-1 max-w-[300px] h-full'>
-                                    <Image  width={1}  height={1} src={imageName}  className='w-full h-full absolute' alt={personInfo && personInfo.name} />
+                                    <Image  width={1}  height={1} src={imageName}  className='w-full h-full absolute' alt={personInfo?.name} />
                             </div>
                         </div>
 

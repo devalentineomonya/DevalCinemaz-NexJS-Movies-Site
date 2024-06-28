@@ -6,9 +6,8 @@ import fallbackImage from "@/assets/fallbackImage.svg";
 const FooterBanner = ({ bannerImage }) => {
   let randomIndex = Math.floor(Math.random() * 21);
   const [image, setImage] = useState(
-    bannerImage[randomIndex] &&
-      bannerImage[randomIndex].backdrop_path &&
-      bannerImage[randomIndex].backdrop_path != null
+    
+      bannerImage[randomIndex]?.backdrop_path != null
       ? `https://image.tmdb.org/t/p/original${bannerImage[randomIndex].backdrop_path}`
       : fallbackImage
   );

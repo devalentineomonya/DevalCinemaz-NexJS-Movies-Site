@@ -26,7 +26,7 @@ const page = async ({ params }) => {
           </div>
         </div>
         <div className='flex flex-col  items-center w-full max-w-[1400px] '>
-          {episodes && episodes.map((episode, i) => (
+          {episodes?.map((episode, i) => (
             <EpisodeCard key={i} episode={episode}/>
           ))}
 

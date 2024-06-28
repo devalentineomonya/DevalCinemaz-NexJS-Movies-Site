@@ -8,7 +8,7 @@ const CompanyCard = ({ mediaInfo }) => {
 
   const [image, setImage] = useState(
     `https://image.tmdb.org/t/p/original${
-      mediaInfo && mediaInfo.logo_path != null && mediaInfo.logo_path
+      mediaInfo?.logo_path != null && mediaInfo.logo_path
     }` || fallbackImage
   );
 
@@ -21,7 +21,7 @@ const CompanyCard = ({ mediaInfo }) => {
           <Image  width={1}  height={1}
         src={typeof image !== "string" ? image.src : image}
         className="absolute w-full h-full object-cover"
-        alt={mediaInfo && mediaInfo.name}
+        alt={mediaInfo?.name}
         onError={() => {
           setImage(fallbackImage);
         }}
@@ -33,7 +33,7 @@ const CompanyCard = ({ mediaInfo }) => {
         }`}
       >
         <p className="text-customWhite font-semibold font-Dosis text-2xl">
-          {mediaInfo && mediaInfo.name}
+          {mediaInfo?.name}
         </p>
       </div>
     </div>

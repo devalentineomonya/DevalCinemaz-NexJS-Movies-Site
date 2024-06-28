@@ -65,8 +65,8 @@ const HeroTrending = ({ setVideoPlaying, action, sliderMovie }) => {
           <p className="text-customWhite my-2">{sliderMovie.overview}</p>
           <div className="flex items-center mt-3">
             <ul className="flex justify-center flex-row  text-customWhite text-lg font-semibold pl-5">
-              {sliderMovie.genres &&
-                sliderMovie.genres.length > 0 &&
+              {
+                sliderMovie?.genres?.length > 0 &&
                 sliderMovie.genres.map((genre) => (
                   <li className="list-disc mr-10" key={genre.id}>
                     {genre.name}

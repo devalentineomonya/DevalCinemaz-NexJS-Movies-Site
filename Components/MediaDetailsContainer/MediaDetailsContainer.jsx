@@ -34,7 +34,7 @@ const MediaDetailsContainer = ({
 
       <div className="w-full max-w-[1400px] flex flex-col items-center">
         <MoviesDetailSmallSections title={`${type} Cast List`} mt="5">
-          {castList && castList.map((cast, i) => (
+          {castList?.map((cast, i) => (
             <PersonCard width="56" key={i} cast={cast} />
           ))}
         </MoviesDetailSmallSections>

@@ -38,9 +38,8 @@ const HomeMainSection = ({
         </SmallSectionContainer>
 
         <SmallSectionContainer title="Top rated Movies" viewMore={true}>
-          {topRatedMovies &&
-            topRatedMovies
-              .slice(0, 10)
+          {
+            topRatedMovies?.slice(0, 10)
               .map((topRatedMovie, i) => (
                 <NewRelease
                   movieInfo={topRatedMovie}
@@ -52,9 +51,7 @@ const HomeMainSection = ({
         </SmallSectionContainer>
 
         <SmallSectionContainer title="Top Rated Series" viewMore={true}>
-          {topRatedSeries &&
-            topRatedSeries
-              .slice(0, 10)
+          {topRatedSeries?.slice(0, 10)
               .map((topRatedSeriesData, i) => (
                 <NewRelease
                   movieInfo={topRatedSeriesData}
@@ -65,9 +62,7 @@ const HomeMainSection = ({
               ))}
         </SmallSectionContainer>
         <SmallSectionContainer title="Now Playing Movies" viewMore={true}>
-          {nowPlayingMovies &&
-            nowPlayingMovies
-              .slice(7, 17)
+          {nowPlayingMovies?.slice(7, 17)
               .map((nowPlayingMovie, i) => (
                 <TrendingMovies
                   mediaInfo={nowPlayingMovie}
@@ -77,9 +72,7 @@ const HomeMainSection = ({
               ))}
         </SmallSectionContainer>
         <SmallSectionContainer title="Series Airing Today" viewMore={true}>
-          {seriesAiringToday &&
-            seriesAiringToday
-              .slice(6, 16)
+          {seriesAiringToday?.slice(6, 16)
               .map((seriesAiringTodayInfo, i) => (
                 <MovieInCategory
                   seriesAiringTodayInfo={seriesAiringTodayInfo}

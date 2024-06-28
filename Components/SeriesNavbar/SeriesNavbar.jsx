@@ -15,8 +15,7 @@ const SeriesNavbar = ({ pt = 0, h, py = 0, tabsNames, seriesId }) => {
       <div
         className={`w-full h-full dark:bg-gray-500 bg-gray-300 flex justify-center items-center flex-row gap-x-4 py-${py}`}
       >
-        {tabsNames &&
-          tabsNames.map((tabButton, i) => (
+        {tabsNames?.map((tabButton, i) => (
             <button
               onClick={() => handleNavigation(tabButton.id)}
               className="dark:text-customWhite text-customDark font-Dosis font-semibold text-xl hover:text-customGreen"

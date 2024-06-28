@@ -8,7 +8,7 @@ import Link from "next/link";
 const NewRelease = ({ width, movieInfo, type = "Movie" }) => {
   const [image, setImage] = useState(
     `https://image.tmdb.org/t/p/original${
-      movieInfo && movieInfo.poster_path !=null &&  movieInfo.poster_path
+      movieInfo?.poster_path !=null &&  movieInfo.poster_path
     }` || fallbackImage
   );
 
@@ -16,7 +16,7 @@ const NewRelease = ({ width, movieInfo, type = "Movie" }) => {
     <Link
       href={`/${
         type.toLowerCase() === "movie" ? "movies" : type.toLowerCase()
-      }/details/${movieInfo && movieInfo.id}`}
+      }/details/${movieInfo?.id}`}
     >
       <div
         className={`h-[380px] w-${width} rounded-md overflow-hidden dark:bg-gray-950 bg-slate-200 flex flex-col flex-shrink-0`}
@@ -30,23 +30,23 @@ const NewRelease = ({ width, movieInfo, type = "Movie" }) => {
             }}
           
             alt={
-              (movieInfo && movieInfo.original_title) ||
-              (movieInfo && movieInfo.name) ||
+              (movieInfo?.original_title) ||
+              (movieInfo?.name) ||
               "Media card Image"
             }
           />
         </div>
         <div className="flex justify-center items-center flex-col cursor-pointer">
           <p className="dark:text-customWhite text-customDark font-Inter font-semibold text-2xl whitespace-nowrap overflow-hidden text-ellipsis px-2">
-            {(movieInfo && movieInfo.original_title) ||
-              (movieInfo && movieInfo.name)}
+            {(movieInfo?.original_title) ||
+              (movieInfo?.name)}
           </p>
           <div className="flex flex-row justify-between items-center w-36">
             {[...Array(10)].map((_, index) => (
               <BsStarFill
                 key={index}
                 className={
-                  index < Math.round((movieInfo && movieInfo.vote_average) || 0)
+                  index < Math.round((movieInfo?.vote_average) || 0)
                     ? "text-yellow-400"
                     : "text-gray-400"
                 }
