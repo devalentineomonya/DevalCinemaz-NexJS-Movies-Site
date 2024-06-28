@@ -24,7 +24,7 @@ export const getSearchResult = async (query, resultType) => {
 export const getMediaItems = async (id, fetchType, itemType) => {
     const data = await fetchData(`${process.env.BASE_URL}/${fetchType}/${id}/${itemType}?api_key=${process.env.API_KEY}`);
     if (itemType === "videos") {
-        const trailer = data.results && data.results.find((v) => v.type === "Trailer") || data.results[0] || [];
+        const trailer = data?.results?.find((v) => v.type === "Trailer") || data.results[0] || [];
         return trailer;
     } else {
         if (itemType === "credits" || itemType === "combined_credits")
