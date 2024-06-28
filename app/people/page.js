@@ -17,7 +17,7 @@ const page = async () => {
                         DevalCinemaz Popular People
                     </h1>
                     <div className="w-full grid xl:grid-cols-5 md:grid-cols-4  sm:grid-cols-2 sm:justify-around gap-x-3  gap-y-6  flex-wrap text-customDark dark:text-customWhite">
-                        {popularPeopleList && popularPeopleList.map((cast, i) => (
+                        {popularPeopleList?.map((cast, i) => (
                             
                             <PersonCard key={i} cast={cast} width={64} />
                         ))
