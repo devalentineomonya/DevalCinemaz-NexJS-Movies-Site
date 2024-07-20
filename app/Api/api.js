@@ -1,3 +1,6 @@
+const baseUrl = process.env.BASE_URL;
+const apiKey = process.env.API_KEY;
+
 export const fetchData = async (url) => {
     const response = await fetch(url);
     if (!response.ok) {
@@ -9,20 +12,20 @@ export const fetchData = async (url) => {
 
 
 export const getInfo = async (id, fetchType) => {
-    return fetchData(`${process.env.BASE_URL}/${fetchType}/${id}?api_key=${process.env.API_KEY}`);
+    return fetchData(`${baseUrl}/${fetchType}/${id}?api_key=${apiKey}`);
 };
 
 
 
 export const getSearchResult = async (query, resultType) => {
-    return fetchData(`${process.env.BASE_URL}/search/${resultType}?query=${query}&api_key=${process.env.API_KEY}`)
+    return fetchData(`${baseUrl}/search/${resultType}?query=${query}&api_key=${apiKey}`)
     .then((data)=>data.results)
 };
 
 
 
 export const getMediaItems = async (id, fetchType, itemType) => {
-    const data = await fetchData(`${process.env.BASE_URL}/${fetchType}/${id}/${itemType}?api_key=${process.env.API_KEY}`);
+    const data = await fetchData(`${baseUrl}/${fetchType}/${id}/${itemType}?api_key=${apiKey}`);
     if (itemType === "videos") {
         const trailer = data?.results?.find((v) => v.type === "Trailer") || data.results[0] || [];
         return trailer;
@@ -36,8 +39,7 @@ export const getMediaItems = async (id, fetchType, itemType) => {
 
 
 export const getMediaPerCategory = async (mediaType, fetchType, page = 1) => {
-    const baseUrl = process.env.BASE_URL;
-    const apiKey = process.env.API_KEY;
+
     let url;
     if (mediaType === "trending") {
         url = `${baseUrl}/${mediaType}/${fetchType}/day?api_key=${apiKey}`;
@@ -53,11 +55,11 @@ export const getMediaPerCategory = async (mediaType, fetchType, page = 1) => {
 
 
 export const getEpisodes = async (seriesId,seasonId) => {
-    return fetchData(`${process.env.BASE_URL}/tv/${seriesId}/season/${seasonId}?api_key=${process.env.API_KEY}`)
+    return fetchData(`${baseUrl}/tv/${seriesId}/season/${seasonId}?api_key=${apiKey}`)
     .then((data)=>data.episodes)
 };
 export const getEpisodeCredits = async (seriesId,seasonId, episodeId) => {
-    return fetchData(`${process.env.BASE_URL}/tv/${seriesId}/season/${seasonId}?api_key=${process.env.API_KEY}`)
+    return fetchData(`${baseUrl}/tv/${seriesId}/season/${seasonId}?api_key=${apiKey}`)
     .then((data)=>data.episodes)
 };
 
