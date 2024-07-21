@@ -7,7 +7,8 @@ const FavoritesCard = () => {
   return (
     <div className="flex flex-row shadow dark:bg-slate-900 dark:shadow-slate-700 bg-customWhite h-56 w-full rounded-xl overflow-hidden text-customDark dark:text-customWhite">
       <div className="min-w-40 h-full">
-            <Image  width={1}  height={1} src={testImage} className="w-full h-full" />
+            <Image layout="responsive"
+        quality={100} width={1}  height={1} src={testImage} className="w-full h-full" />
       </div>
       <div className="flex flex-col py-3 pl-3 pr-5">
         <div>

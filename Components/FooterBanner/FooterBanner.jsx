@@ -14,10 +14,10 @@ const FooterBanner = ({ bannerImage }) => {
 
   return (
     <div className="w-full h-64 rounded-md relative border-y-[1px] dark:border-y-white border-y-black  ">
-          <Image  width={1}  height={1}
+      <Image layout="responsive"
+        quality={100} width={1} height={1}
         src={typeof image !== "string" ? image.src : image}
         className="absolute object-center h-full w-full"
-    
         alt={bannerImage[randomIndex].title}
         onError={() => setImage(fallbackImage)}
       />

@@ -18,7 +18,8 @@ const UserProfileBanner = () => {
   return (
     <div className="w-full h-64 relative flex justify-center items-center ">
       <div className="absolute bg-gradient-to-tr from-black via-gray-900 to-gray-950 bg-opacity-50 top-0 bottom-0 w-full"></div>
-          <Image  width={1}  height={1}
+          <Image layout="responsive"
+        quality={100} width={1}  height={1}
         src={bannerImage}
         className="w-full h-full absolute"
       />

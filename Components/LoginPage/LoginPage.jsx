@@ -12,11 +12,14 @@ const LoginPage = () => {
   return (
     <>
       <div className="absolute w-full h-full top-0 bottom-0 bg-black bg-opacity-50"></div>
-          <Image  width={1}  height={1}
+          <Image
+        width={1}
+        height={1}
+        layout="responsive"
+        quality={100}
         src={testImage}
-        className="h-full w-full "
+        className="h-full w-full"
         alt="testImage"
-  
       />
       <div className="w-full h-full flex justify-center items-center absolute top-0 pt-[65px]">
         <div className="w-[400px] h-fit bg-customWhite rounded-lg relative pt-7 pb-8 px-5 flex items-center justify-center">
