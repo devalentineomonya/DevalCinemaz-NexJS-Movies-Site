@@ -8,6 +8,12 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
 body {
     font-family: "Inter", "Dosis";
 }

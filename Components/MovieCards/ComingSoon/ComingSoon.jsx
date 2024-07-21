@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const ComingSoon = ({ upcomingMovie }) => {
   const [image, setImage] = useState(
-    upcomingMovie?.backdrop_path !=null
+    upcomingMovie?.backdrop_path != null
       ? `https://image.tmdb.org/t/p/original${upcomingMovie.backdrop_path}`
       : fallbackImage
   );
@@ -15,10 +15,11 @@ const ComingSoon = ({ upcomingMovie }) => {
   return (
     <div className="w-1/2 h-[400px] relative rounded-md overflow-hidden">
       <Link href={`/movies/details/${upcomingMovie.id}`}>
-            <Image  width={1}  height={1}
-          src={typeof(image) !== 'string' ? image.src : image} 
+        <Image layout="responsive"
+          quality={100} width={1} height={1}
+          src={typeof (image) !== 'string' ? image.src : image}
           className="relative w-full h-full object-cover"
-     
+
           alt={upcomingMovie.original_title}
           onError={() => {
             setImage(fallbackImage);

@@ -14,10 +14,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.className} overflow-x-hidden`}>
-        
         <Navbar />
-        
+        <div>
         {children}
+        </div>
         <Footer />
       </body>
     </html>

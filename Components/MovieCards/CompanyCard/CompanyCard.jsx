@@ -22,6 +22,8 @@ const CompanyCard = ({ mediaInfo }) => {
         src={typeof image !== "string" ? image.src : image}
         className="absolute w-full h-full object-cover"
         alt={mediaInfo?.name}
+        layout="responsive"
+        quality={100}
         onError={() => {
           setImage(fallbackImage);
         }}

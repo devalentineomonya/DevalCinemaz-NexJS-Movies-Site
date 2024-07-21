@@ -14,23 +14,24 @@ const HeroTrending = ({ setVideoPlaying, action, sliderMovie }) => {
     return `${hours}h ${remainingMinutes}Min`;
   }
 
+
   const year = new Date(sliderMovie.release_date).getFullYear();
   return (
-    <div className="w-full xl:h-[70vh] h-fit relative  cursor-default">
+    <div className="p-4 m-4 w-full xl:h-[70vh] h-fit relative cursor-default">
       <div className="bg-gradient-to-r from-customDark via-gray-800 to-black h-full w-full absolute left-0 top-0 dark:opacity-[0.7] opacity-40"></div>
       <div className=" w-full h-full">
             <Image  width={1}  height={1}
           src={
             `https://image.tmdb.org/t/p/original${
-              sliderMovie.backdrop_path != null && sliderMovie.backdrop_path
-            }` || fallbackImage
+              sliderMovie.backdrop_path ? sliderMovie.backdrop_path : fallbackImage}`
           }
-          className="w-full h-full object-cover"
+          quality={100}
+          layout="responsive"
+          className="w-full h-full"
           alt={sliderMovie.original_title || sliderMovie.name}
-        
         />
 
-        <div className=" xl:w-[40%] w-[55%] h-[70%] absolute bottom-20 xl:left-40 left-10  z-20">
+        <div className=" xl:w-[40%] w-[55%] h-[70%] absolute">
           <p className="text-2xl font-bold">
             <span className="text-customGreen mr-3">TMDB</span>
             <span className="text-customWhite">Films</span>

@@ -6,10 +6,8 @@ import Link from "next/link";
 
 const GuestStart = ({ guestStar }) => {
   const [image, setImage] = useState(
-    `https://image.tmdb.org/t/p/original${
-      
-      guestStar?.profile_path != null &&
-      guestStar.profile_path
+    `https://image.tmdb.org/t/p/original${guestStar?.profile_path != null &&
+    guestStar.profile_path
     }` || fallbackImage
   );
 
@@ -17,12 +15,13 @@ const GuestStart = ({ guestStar }) => {
     <Link href={`/people/details/${guestStar.id}`}>
       <div className="h-fit w-56 flex flex-row gap-x-2 border border-customDark dark:border-customWhite rounded-xl text-customDark dark:text-customWhite">
         <div className="w-16 h-20  rounded-xl overflow-hidden ">
-              <Image  width={1}  height={1}
+          <Image layout="responsive"
+            quality={100} width={1} height={1}
             src={image}
             className="h-full w-full"
-    
+
             alt={guestStar.original_name || "Name not defined"}
-            onError={()=>setImage(fallbackImage)}
+            onError={() => setImage(fallbackImage)}
           />
         </div>
         <div className="flex justify-center flex-col">

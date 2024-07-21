@@ -9,10 +9,8 @@ import GuestStart from "@/Components/GuestStart/GuestStart";
 const EpisodeCard = ({ episode }) => {
   const [active, setActive] = useState("");
   const [image, setImage] = useState(
-    `https://image.tmdb.org/t/p/original${
-      
-      episode?.still_path != null &&
-      episode.still_path
+    `https://image.tmdb.org/t/p/original${episode?.still_path != null &&
+    episode.still_path
     }` || fallbackImage
   );
 
@@ -44,11 +42,13 @@ const EpisodeCard = ({ episode }) => {
         >
           <div className="flex flex-row gap-x-4">
             <div className="w-[180px]  rounded-md overflow-hidden">
-                  <Image  width={1}  height={1}
+              <Image width={1} height={1}
                 src={image}
+                layout="responsive"
+                quality={100}
                 className="w-full h-full"
                 alt={`${episode?.name}` || "Name not found"}
-              
+
                 onError={() => setImage(fallbackImage)}
               />
             </div>
@@ -79,11 +79,10 @@ const EpisodeCard = ({ episode }) => {
           </div>
           <div className="w-[60px] flex justify-center items-center">
             <BsChevronDown
-              className={`${
-                active === episode.id
+              className={`${active === episode.id
                   ? `rotate-[-180deg] -mr-1`
                   : `rotate-0 fill-[#212529]  dark:fill-white`
-              } ml-auto h-5 w-5 shrink-0 fill-[#336dec] transition-transform duration-300 ease-in-out motion-reduce:transition-none dark:fill-blue-300 `}
+                } ml-auto h-5 w-5 shrink-0 fill-[#336dec] transition-transform duration-300 ease-in-out motion-reduce:transition-none dark:fill-blue-300 `}
             />
           </div>
         </div>
@@ -97,7 +96,7 @@ const EpisodeCard = ({ episode }) => {
           <div className="flex justify-center w-full">
             <div className="w-3/4 flex flex-row items-start justify-start flex-wrap gap-x-4 gap-y-6">
               {episode?.guest_stars.length > 0 &&
-                episode.guest_stars.map((guestStar, i) => <GuestStart guestStar={guestStar} key={i}/>)}
+                episode.guest_stars.map((guestStar, i) => <GuestStart guestStar={guestStar} key={i} />)}
             </div>
           </div>
         </div>
