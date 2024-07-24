@@ -1,16 +1,18 @@
 "use client";
+import { BsEnvelope } from "react-icons/bs";
 import InputItem from "../InputItem/InputItem";
 
-const LoginFrom = () => {
+const LoginFrom = ({onChange, value}) => {
   return (
     <div className="flex flex-shrink-0 flex-col">
       <div>
-        <InputItem />
-        <InputItem />
+
+        <InputItem icon={<BsEnvelope/>} label="Email" type="email" placeholder="Email / UserName" name="email" value={value.email} onChange={onChange} />
+        <InputItem  icon={<BsEnvelope/>} label="Password" type="password" placeholder="Password" name="password" value={value.password} onChange={onChange} />
       </div>
       <div className="flex justify-between font-Dosis font-thin text-md mt-3 ">
         <div className="flex gap-x-2">
-          <input type="checkbox" name="" id="" />
+          <input type="checkbox" name="remember"/>
           <label htmlFor="">Remember Me</label>
         </div>
         <span className="italic underline text-blue-700 cursor-pointer">Forgot password</span>
