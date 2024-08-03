@@ -15,7 +15,7 @@ const ComingSoon = ({ upcomingMovie }) => {
   return (
     <div className="w-1/2 h-[400px] relative rounded-md overflow-hidden">
       <Link href={`/movies/details/${upcomingMovie.id}`}>
-            <Image  width={1}  height={1}
+            <Image quality={100} layout="responsive" width={1}  height={1}
           src={typeof(image) !== 'string' ? image.src : image} 
           className="relative w-full h-full object-cover"
      

@@ -17,7 +17,7 @@ const GuestStart = ({ guestStar }) => {
     <Link href={`/people/details/${guestStar.id}`}>
       <div className="h-fit w-56 flex flex-row gap-x-2 border border-customDark dark:border-customWhite rounded-xl text-customDark dark:text-customWhite">
         <div className="w-16 h-20  rounded-xl overflow-hidden ">
-              <Image  width={1}  height={1}
+              <Image quality={100} layout="responsive" width={1}  height={1}
             src={image}
             className="h-full w-full"
     

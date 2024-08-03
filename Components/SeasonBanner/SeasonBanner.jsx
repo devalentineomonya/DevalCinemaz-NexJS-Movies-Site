@@ -13,7 +13,7 @@ const SeasonBanner = ({seriesData}) => {
     <div className="w-full h-32 dark:bg-orange-700 bg-orange-500 flex justify-center items-center px-10 dark:text-customWhite text-customDark">
       <div className="w-full max-w-[1400px] flex flex-row h-full py-3 gap-x-4">
         <div className="w-16 overflow-hidden rounded-md">
-              <Image  width={1}  height={1} src={typeof(image) !== 'string' ? image.src : image}  className="h-full w-16"  alt={seriesData.name} onError={()=>{setImage(fallbackImage)}} />
+              <Image quality={100} layout="responsive" width={1}  height={1} src={typeof(image) !== 'string' ? image.src : image}  className="h-full w-16"  alt={seriesData.name} onError={()=>{setImage(fallbackImage)}} />
         </div>
         <div className="w-full h-full ">
             <h1 className=" font-Arial text-4xl font-bold ">{seriesData.name}<span className="font-thin ">({new Date(seriesData.first_air_date).getFullYear()})</span></h1>

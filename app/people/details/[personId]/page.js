@@ -28,7 +28,7 @@ const page = async ({ params }) => {
                     <div className=' grid grid-cols-4 justify-center gap-x-3'>
                         <div className='w-full h-fit col-span-1'>
                             <div className='relative w-full h-[450px]  pt-5'>
-                                    <Image  width={1}  height={1} src={imageName}  className='w-full h-full absolute' alt={personInfo.name} />
+                                    <Image quality={100} layout="responsive" width={1}  height={1} src={imageName}  className='w-full h-full absolute' alt={personInfo.name} />
                             </div>
                             <div className='my-10'>
                                 <Link href={`${personInfo?.homepage || "https://www.google.com/search?q=" + personInfo.name.replaceAll(" ", "+")}`} target='_blank' className='flex justify-start items-center gap-x-2'>Personal Website<LuExternalLink /></Link>
@@ -70,7 +70,7 @@ const page = async ({ params }) => {
                                 </ul>
                             </div>
                             <div className='relative  grid col-span-1 max-w-[300px] h-full'>
-                                    <Image  width={1}  height={1} src={imageName}  className='w-full h-full absolute' alt={personInfo?.name} />
+                                    <Image quality={100} layout="responsive" width={1}  height={1} src={imageName}  className='w-full h-full absolute' alt={personInfo?.name} />
                             </div>
                         </div>
 
