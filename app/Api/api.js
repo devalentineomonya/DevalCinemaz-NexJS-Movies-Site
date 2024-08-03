@@ -8,12 +8,11 @@ export const fetchData = async (url) => {
 
     const response = await fetch(url);
     if (!response.ok) {
-        throw new Error(`There was an error when fetching data: ${response.status}`);
+        throw new Error(`There was an error when fetching data ${response.text()}`);
     }
-    console.log(requests)
+    console.log(requests + " Requests")
     return response.json();
 };
-
 
 
 export const getInfo = async (id, fetchType) => {
