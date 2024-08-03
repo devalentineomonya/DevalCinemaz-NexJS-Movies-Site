@@ -1,11 +1,16 @@
 const baseUrl = process.env.BASE_URL;
 const apiKey = process.env.API_KEY;
 
+let requests = 0
+
 export const fetchData = async (url) => {
+    requests++
+
     const response = await fetch(url);
     if (!response.ok) {
         throw new Error(`There was an error when fetching data: ${response.status}`);
     }
+    console.log(requests)
     return response.json();
 };
 
